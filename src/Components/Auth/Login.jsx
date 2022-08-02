@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Shared/Button';
 
 const Login = () => {
   return (
@@ -9,7 +10,7 @@ const Login = () => {
             Welcome back to Contra
           </h2>
           <form>
-            <div className="border-2 rounded-t-lg w-full md:w-[70%] mx-auto flex flex-col text-left">
+            <div className="border-2 rounded-t-lg w-full md:w-[70%] mx-auto flex flex-col text-left mb-5">
               <label
                 className="text-gray-500 text-sm mt-1 px-4 font-medium tracking-wide"
                 htmlFor="email"
@@ -21,8 +22,7 @@ const Login = () => {
                 type="text"
               />
             </div>
-            <br />
-            <input className="bg-gray-300" type="submit" value="Log In" />
+            <Button type="submit" value="Login" />
           </form>
         </div>
       </article>
