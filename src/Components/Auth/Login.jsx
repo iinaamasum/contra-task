@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Shared/Button';
+import Divider from '../Shared/Divider';
 
 const Login = () => {
   return (
@@ -18,11 +19,12 @@ const Login = () => {
                 Email
               </label>
               <input
-                className="py-1 px-4 focus:outline-none text-sm border-b-2 focus:border-blue-600"
+                className="py-2 px-4 focus:outline-none text-purple-600 font-semibold border-b-2 focus:border-blue-600"
                 type="text"
               />
             </div>
             <Button type="submit" value="Login" />
+            <Divider />
           </form>
         </div>
       </article>
