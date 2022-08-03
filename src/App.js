@@ -1,4 +1,3 @@
-import './App.css';
 import Login from './Components/Auth/Login';
 import Navbar from './Components/Shared/Navbar';
 
