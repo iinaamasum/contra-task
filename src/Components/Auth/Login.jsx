@@ -6,10 +6,12 @@ import Social from './Social';
 const Login = () => {
   return (
     <section>
-      <article className="flex flex-col items-center justify-center h-screen px-4 md:px-10">
+      <article className="flex flex-col items-center justify-center h-screen px-4 md:px-10 backdrop-blur-3xl">
         <div
-          style={{ boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px' }}
-          className="bg-[#fefefe] rounded-3xl p-5 w-full md:w-3/4 lg:w-[55%] mx-auto text-center py-20 md:mt-7"
+          style={{
+            boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
+          }}
+          className="bg-[#fefefe] rounded-3xl p-5 w-full md:w-3/4 lg:w-[55%] mx-auto text-center py-20 md:mt-7 backdrop-blur-xl"
         >
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold my-5">
             Welcome back to Contra
@@ -37,7 +39,7 @@ const Login = () => {
 
         {/* sign up section  */}
         <div className="mt-5 flex items-center gap-5 w-[90%] md:w-[60%] lg:w-[40%] mx-auto">
-          <p className="text-[13px] sm:text-base lg:text-lg xl:text-xl xxl:text-2xl leading-tight w-[60%] sm:w-[70%]">
+          <p className="text-[13px] sm:text-base lg:text-lg xxl:text-xl leading-tight w-[60%] sm:w-[70%]">
             <span className="font-bold">New To Contra?</span> We're an
             Independent-first community and commission-free hiring platform
             empowering the future of flexible work.
