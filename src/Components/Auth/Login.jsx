@@ -14,12 +14,12 @@ const Login = () => {
     <>
       <Navbar />
       <section>
-        <article className="flex flex-col items-center justify-center h-screen px-4 md:px-10 backdrop-blur-3xl">
+        <article className="flex flex-col items-center justify-center h-screen px-4 md:px-10">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fefefe] rounded-3xl p-5 w-full md:w-3/4 lg:w-[55%] xxl:w-[40%] mx-auto text-center py-16 md:mt-7 backdrop-blur-xl"
+            className="bg-[#fefefe] rounded-3xl p-5 w-full md:w-3/4 lg:w-[55%] xxl:w-[40%] mx-auto text-center py-16 md:mt-7 "
           >
             {/* heading  */}
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold mt-5 mb-10">

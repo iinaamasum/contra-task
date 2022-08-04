@@ -1,13 +1,14 @@
 import React from 'react';
 import { BsInfoCircle } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
 import EmailForm from './EmailForm';
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Not implemented yet');
+    navigate('/verify-pin-code');
   };
   return (
     <>
