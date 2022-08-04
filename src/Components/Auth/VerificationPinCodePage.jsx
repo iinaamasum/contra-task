@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import goldenLogo from '../../Assets/logo/contra-glossy.png';
 import Navbar from '../Shared/Navbar';
+import PinVerifyInputBox from './PinVerifyInputBox';
 
 const VerificationPinCodePage = () => {
   return (
     <>
       <Navbar />
       <section>
-        <article className="flex flex-col items-center justify-center h-screen px-4 md:px-10 text-center">
+        <article className="flex flex-col items-center justify-center h-[70vh] px-4 md:px-10 text-center">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
@@ -25,6 +26,7 @@ const VerificationPinCodePage = () => {
                 Enter in the verification code sent to:
               </p>
             </div>
+            <PinVerifyInputBox />
           </div>
 
           {/* resend code section  */}

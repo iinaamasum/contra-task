@@ -6,7 +6,9 @@ const Navbar = ({ navLogInLink }) => {
   return (
     <section className="bg-[#fefefe] py-3 md:py-6 shadow-lg sticky top-0 z-50">
       <nav className="container mx-auto px-4 md:px-8 lg:px-10 flex items-center justify-between">
-        <img className="h-7 object-contain" src={logo} alt="" />
+        <Link to="/">
+          <img className="h-7 object-contain" src={logo} alt="" />
+        </Link>
         {navLogInLink && (
           <span className="text-lg">
             Already have an account?{' '}
