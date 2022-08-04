@@ -19,7 +19,7 @@ const Login = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fefefe] rounded-3xl px-[32px] py-[24px] md:px-[160px] md:py-[72px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fefefe] rounded-3xl px-[32px] py-[24px] md:px-[160px] md:py-[69px] w-full md:w-[800px] mx-auto text-center"
           >
             {/* heading  */}
             <h4 className="text-[1.4375rem] md:text-[2.215rem] font-[700] mb-[24px] tracking-tight">
@@ -31,7 +31,7 @@ const Login = () => {
           </div>
 
           {/* sign up redirect section  */}
-          <div className="mt-5 lg:flex items-center gap-2 w-[95%] md:w-[640px] mx-auto text-center">
+          <div className="my-5 lg:flex items-center gap-2 w-[95%] md:w-[640px] mx-auto text-center">
             <p className="text-[13px] sm:text-base font-medium sm:leading-4 lg:max-w-[28rem] text-left text-gray-500">
               <span className="font-bold text-gray-700">New To Contra?</span>{' '}
               We're an Independent-first community and commission-free hiring

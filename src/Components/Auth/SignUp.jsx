@@ -40,7 +40,7 @@ const SignUp = () => {
               <EmailForm handleSubmit={handleSubmit} btnTitle="Sign Up" />
             </div>
           </div>
-          <div className="bg-[#fefefe] mt-1 py-[25px] w-full md:w-[800px] mx-auto text-center text-gray-500 rounded-b-3xl leading-5 text-[15px]">
+          <div className="bg-[#fefefe] mt-[2.5px] py-[25px] w-full md:w-[800px] mx-auto text-center text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-5">
             <p>
               By continuing, you agree to{' '}
               <Link to="/" className="underline">
