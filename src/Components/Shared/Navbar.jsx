@@ -15,7 +15,7 @@ const Navbar = ({ navLogInLink }) => {
           <img className="h-7 object-contain" src={logo} alt="" />
         </Link>
         {navLogInLink && (
-          <span className="text-base xxl:text-lg text-gray-500">
+          <span className="hidden md:block text-base xxl:text-lg text-gray-500">
             Already have an account?{' '}
             <Link className="font-semibold ml-[19px]" to="/">
               Log In
