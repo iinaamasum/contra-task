@@ -9,17 +9,17 @@ const VerificationPinCodePage = () => {
     <>
       <Navbar />
       <section>
-        <article className="flex flex-col items-center justify-center h-[70vh] px-4 md:px-10 text-center">
+        <article className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-10 mt-[1.5rem] md:mt-[40px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fefefe] rounded-3xl p-5 w-full md:w-3/4 lg:w-[55%] xxl:w-[40%] mx-auto text-center py-16 md:mt-7 backdrop-blur-xl"
+            className="bg-[#fefefe] rounded-3xl px-[32px] py-[24px] md:px-[160px] md:py-[72px] w-full md:w-[800px] mx-auto text-center"
           >
             {/* heading  */}
             <div className="w-full flex items-center flex-col">
               <img className="w-16 h-16" src={goldenLogo} alt="" />
-              <h2 className="text-xl md:text-2xl font-semibold my-3">
+              <h2 className="text-base md:text-lg font-semibold my-3">
                 We emailed you a code
               </h2>
               <p className="text-gray-500 text-lg">

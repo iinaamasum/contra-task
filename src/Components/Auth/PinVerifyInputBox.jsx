@@ -32,7 +32,7 @@ const PinVerifyInputBox = () => {
   console.log(enteredPin);
   return (
     <div className="w-full flex items-center justify-center mt-5">
-      <div className="border-2 border-[#F9E4A6] rounded-2xl py-3 grid grid-cols-6 gap-6 px-10">
+      <div className="border-2 border-[#F9E4A6] rounded-2xl py-3 grid grid-cols-6 gap-6 px-10 bg-[#fff]">
         <input
           maxLength={1}
           className="w-5 text-2xl font-bold text-orange-500 focus:outline-none placeholder:text-5xl placeholder:text-gray-400"
