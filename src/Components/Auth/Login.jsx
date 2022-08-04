@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/sign-up');
+    navigate('/verify-pin-code');
   };
   return (
     <>
@@ -37,7 +37,10 @@ const Login = () => {
               Independent-first community and commission-free hiring platform
               empowering the future of flexible work.
             </p>
-            <button className="bg-black text-white px-6 py-3 rounded-full w-[40%] sm:w-[30%]">
+            <button
+              onClick={() => navigate('/sign-up')}
+              className="bg-black text-white px-6 py-3 rounded-full w-[40%] sm:w-[30%]"
+            >
               Sign Up
             </button>
           </div>
