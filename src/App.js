@@ -1,11 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
 import Login from './Components/Auth/Login';
-import Navbar from './Components/Shared/Navbar';
+import SignUp from './Components/Auth/SignUp';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Login />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+      </Routes>
     </>
   );
 }
