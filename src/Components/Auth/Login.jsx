@@ -14,7 +14,7 @@ const Login = () => {
     <>
       <Navbar />
       <section>
-        <article className="flex flex-col items-center justify-center px-4 md:px-10 md:mt-[40px]">
+        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[40px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
@@ -31,16 +31,16 @@ const Login = () => {
           </div>
 
           {/* sign up redirect section  */}
-          <div className="mt-5 sm:flex items-center gap-2 w-[95%] md:w-[640px] mx-auto text-center">
+          <div className="mt-5 lg:flex items-center gap-2 w-[95%] md:w-[640px] mx-auto text-center">
             <p className="text-[13px] sm:text-base font-medium sm:leading-4 lg:max-w-[28rem] text-left text-gray-500">
               <span className="font-bold text-gray-700">New To Contra?</span>{' '}
               We're an Independent-first community and commission-free hiring
               platform empowering the future of flexible work.
             </p>
-            <div className="sm:w-[156px]">
+            <div className="sm:w-[156px] mx-auto">
               <button
                 onClick={() => navigate('/sign-up')}
-                className="bg-black text-white rounded-full px-[25px] py-[12px] sm:px-[46px] sm:py-[18px] mt-[16px] sm:mt-0 hover:bg-gray-800"
+                className="bg-black text-white rounded-full px-[25px] py-[12px] sm:px-[46px] sm:py-[18px] mt-[16px] lg:mt-0 hover:bg-gray-800"
               >
                 Sign Up
               </button>
