@@ -40,6 +40,7 @@ const PinVerifyInputBox = () => {
           name="val-1"
           placeholder="."
           onChange={handleChange}
+          autoComplete="off"
         />
         <input
           maxLength={1}
@@ -48,6 +49,7 @@ const PinVerifyInputBox = () => {
           name="val-2"
           placeholder="."
           onChange={handleChange}
+          autoComplete="off"
         />
         <input
           maxLength={1}
@@ -56,6 +58,7 @@ const PinVerifyInputBox = () => {
           name="val-3"
           placeholder="."
           onChange={handleChange}
+          autoComplete="off"
         />
         <input
           maxLength={1}
@@ -64,6 +67,7 @@ const PinVerifyInputBox = () => {
           placeholder="."
           name="val-4"
           onChange={handleChange}
+          autoComplete="off"
         />
         <input
           maxLength={1}
@@ -72,6 +76,7 @@ const PinVerifyInputBox = () => {
           name="val-5"
           placeholder="."
           onChange={handleChange}
+          autoComplete="off"
         />
         <input
           maxLength={1}
@@ -80,6 +85,7 @@ const PinVerifyInputBox = () => {
           placeholder="."
           name="val-6"
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
     </div>
