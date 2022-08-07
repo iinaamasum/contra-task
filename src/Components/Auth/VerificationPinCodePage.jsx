@@ -1,10 +1,13 @@
 import React from 'react';
+import AuthCode from 'react-auth-code-input';
 import { Link } from 'react-router-dom';
 import goldenLogo from '../../Assets/logo/contra-glossy.png';
 import Navbar from '../Shared/Navbar';
-import PinVerifyInputBox from './PinVerifyInputBox';
 
 const VerificationPinCodePage = () => {
+  const handleOnChange = (e) => {
+    console.log(e);
+  };
   return (
     <>
       <Navbar />
@@ -26,7 +29,14 @@ const VerificationPinCodePage = () => {
                 Enter in the verification code sent to:
               </p>
             </div>
-            <PinVerifyInputBox />
+            <div className="w-full flex items-center justify-center mt-5">
+              <AuthCode
+                onChange={handleOnChange}
+                inputClassName="w-5 text-2xl font-bold text-orange-500 focus:outline-none placeholder:text-5xl placeholder:text-gray-400"
+                placeholder="."
+                containerClassName="border-2 border-[#F9E4A6] rounded-2xl py-[12px] grid grid-cols-6 gap-6 px-10 bg-[#fff]"
+              />
+            </div>
           </div>
 
           {/* resend code section  */}
