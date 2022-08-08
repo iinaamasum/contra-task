@@ -18,8 +18,8 @@ const ProfileInfoForm = ({ setUserData }) => {
       <form id="user-profile-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center gap-x-[16px] mb-[42px]">
           {/* first name */}
-          <div>
-            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left">
+          <div className="relative">
+            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-sm mt-1 px-4"
                 htmlFor="First-name"
@@ -27,7 +27,7 @@ const ProfileInfoForm = ({ setUserData }) => {
                 First Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none border-b-[1px] border-black"
+                className="py-[6.5px] px-4 focus:outline-none"
                 type="text"
                 {...register('first_name', {
                   required: {
@@ -38,7 +38,7 @@ const ProfileInfoForm = ({ setUserData }) => {
               />
               <label className="level font-bold"></label>
             </div>
-            <label className="text-sm font-medium flex text-left">
+            <label className="text-[13px] flex text-left absolute top-16">
               {errors.first_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.first_name.message}
@@ -48,8 +48,8 @@ const ProfileInfoForm = ({ setUserData }) => {
           </div>
 
           {/* last name */}
-          <div>
-            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left">
+          <div className="relative">
+            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-sm mt-1 px-4"
                 htmlFor="Last-name"
@@ -57,7 +57,7 @@ const ProfileInfoForm = ({ setUserData }) => {
                 Last Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none border-b-[1px] border-black"
+                className="py-[6.5px] px-4 focus:outline-none"
                 type="text"
                 {...register('last_name', {
                   required: {
@@ -68,7 +68,7 @@ const ProfileInfoForm = ({ setUserData }) => {
               />
               <label className="level font-bold"></label>
             </div>
-            <label className="text-sm font-medium flex text-left">
+            <label className="text-[13px] flex text-left absolute top-16">
               {errors.last_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.last_name.message}
@@ -78,22 +78,54 @@ const ProfileInfoForm = ({ setUserData }) => {
           </div>
         </div>
         {/* location  */}
-        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black">
-          <label
-            className="text-gray-500 text-sm mt-1 px-4"
-            htmlFor="Last-name"
-          >
+        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[42px]">
+          <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="location">
             Location
           </label>
           <LocationSelection setSelectedLocation={setSelectedLocation} />
         </div>
-        <label className="text-sm font-medium flex text-left">
-          {errors.last_name?.type === 'required' && (
+        <label className="text-[13px] flex text-left">
+          {errors.location?.type === 'required' && (
             <span className="label-text-alt text-red-500">
-              {errors.last_name.message}
+              {errors.location.message}
             </span>
           )}
         </label>
+
+        {/* profession field  */}
+        <div className="relative">
+          <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[42px]">
+            <label
+              className="text-gray-500 text-sm mt-1 px-4"
+              htmlFor="profession"
+            >
+              Professional One-Liner
+            </label>
+            <input
+              className="py-[6.5px] px-4 focus:outline-none"
+              type="text"
+              {...register('profession', {
+                required: {
+                  value: true,
+                  message: 'Professional title is required.',
+                },
+              })}
+            />
+            <label className="level font-bold"></label>
+          </div>
+          <label className="text-[13px] flex text-left absolute top-16">
+            {errors.profession?.type === 'required' && (
+              <span className="label-text-alt text-red-500">
+                {errors.profession.message}
+              </span>
+            )}
+            {!errors?.profession && (
+              <span className="label-text-alt text-gray-400">
+                e.g. Graphic designer focused on social impact 🚀
+              </span>
+            )}
+          </label>
+        </div>
       </form>
     </section>
   );

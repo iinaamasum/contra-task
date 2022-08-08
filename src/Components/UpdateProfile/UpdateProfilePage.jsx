@@ -32,6 +32,8 @@ const UpdateProfilePage = () => {
               <ProfileInfoForm setUserData={setUserData} />
             </div>
           </div>
+
+          {/* form submit btn  */}
           <div className="bg-[#fefefe] mt-[2.5px] py-[25px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-5">
             <button
               type="submit"
