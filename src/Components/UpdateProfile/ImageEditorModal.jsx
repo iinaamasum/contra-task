@@ -73,6 +73,9 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
                   ref={editor}
                   scale={parseFloat(imageData.scale)}
                   image={profileImg}
+                  border={0}
+                  height={300}
+                  width={300}
                   style={{
                     background: 'white',
                     width: '300px',
@@ -89,7 +92,7 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
                   onChange={handleScale}
                   min="1"
                   max="2"
-                  step="0.01"
+                  step="0.1"
                   defaultValue="1"
                   className="h-[2px]"
                 />
