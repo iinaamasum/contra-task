@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import LocationSelection from './LocationSelection';
+import ProfileImage from './ProfileImage';
 import SkillSetSelector from './SkillSetSelector';
 
 const ProfileInfoForm = ({ setUserData }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
   const [skillSet, setSkillSet] = useState([]);
+  const [profileImg, setProfileImg] = useState({});
   const {
     register,
     handleSubmit,
@@ -16,9 +18,13 @@ const ProfileInfoForm = ({ setUserData }) => {
     console.log(selectedLocation);
     console.log(skillSet);
   };
+  console.log(profileImg);
   return (
     <section>
       <form id="user-profile-form" onSubmit={handleSubmit(onSubmit)}>
+        {/* user Image  */}
+        <ProfileImage setProfileImg={setProfileImg} />
+
         <div className="flex items-center gap-x-[16px] mb-[42px]">
           {/* first name */}
           <div className="relative">
