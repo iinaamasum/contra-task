@@ -3,6 +3,7 @@ import Login from './Components/Auth/Login';
 import SignUp from './Components/Auth/SignUp';
 import VerificationPinCodePage from './Components/Auth/VerificationPinCodePage';
 import ScrollToTop from './Components/Shared/RouteToTop';
+import SocialLinks from './Components/SocialLinks/SocialLinks';
 import UpdateProfilePage from './Components/UpdateProfile/UpdateProfilePage';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             element={<VerificationPinCodePage />}
           />
           <Route path="/update-profile" element={<UpdateProfilePage />} />
+          <Route path="/social-links" element={<SocialLinks />} />
         </Routes>
       </ScrollToTop>
     </section>

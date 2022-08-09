@@ -37,7 +37,7 @@ const ProfileImage = ({ setProfileImg, editedImg }) => {
       />
       <button
         onClick={handleImage}
-        className="inline-flex items-center justify-center w-full md:w-[242px] font-semibold py-[10px] border-2 border-[#f9e4a9] rounded-3xl mt-[24px]"
+        className="inline-flex items-center justify-center w-[242px] font-semibold py-[10px] border-2 border-[#f9e4a9] rounded-3xl mt-[24px]"
       >
         <AiFillCamera size={25} className="mr-2" />
         Upload Profile Image

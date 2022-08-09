@@ -49,7 +49,7 @@ const UpdateProfilePage = () => {
               <button
                 type="submit"
                 form="user-profile-form"
-                className="rounded-full h-12 w-[148px] mr-[24px] bg-[#f2c94c] hover:bg-[#f2c84cc3] text-black font-semibold text-md md:text-lg shadow-sm"
+                className="rounded-full h-12 w-[100px] sm:w-[148px] mr-[24px] bg-[#f2c94c] hover:bg-[#f2c84cc3] text-black font-semibold text-md md:text-lg shadow-sm"
               >
                 Next
               </button>

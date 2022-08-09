@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import LocationSelection from './LocationSelection';
 import ProfileImage from './ProfileImage';
 import SkillSetSelector from './SkillSetSelector';
@@ -7,6 +8,7 @@ import SkillSetSelector from './SkillSetSelector';
 const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
   const [skillSet, setSkillSet] = useState([]);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -15,6 +17,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
   } = useForm();
   const onSubmit = (data) => {
     setUserData({ ...data, selectedLocation, skillSet });
+    navigate('/social-links');
   };
   return (
     <section>
@@ -22,9 +25,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
         {/* user Image  */}
         <ProfileImage setProfileImg={setProfileImg} editedImg={editedImg} />
 
-        <div className="flex items-center gap-x-[16px] mb-[24px]">
+        <div className="md:flex items-center md:gap-x-[16px] mb-[24px]">
           {/* first name */}
-          <div className="relative">
+          <div className="relative w-full mb-[24px] md:mb-0">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-sm mt-1 px-4"
@@ -33,8 +36,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                 First Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none"
+                className="py-[6.5px] px-4 focus:outline-none bg-white"
                 type="text"
+                autoComplete="off"
                 {...register('first_name', {
                   required: {
                     value: true,
@@ -54,7 +58,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
           </div>
 
           {/* last name */}
-          <div className="relative">
+          <div className="relative w-full">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-sm mt-1 px-4"
@@ -63,8 +67,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                 Last Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none"
+                className="py-[6.5px] px-4 focus:outline-none bg-white"
                 type="text"
+                autoComplete="off"
                 {...register('last_name', {
                   required: {
                     value: true,
@@ -109,8 +114,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
               Professional One-Liner
             </label>
             <input
-              className="py-[6.5px] px-4 focus:outline-none"
+              className="py-[6.5px] px-4 focus:outline-none bg-white"
               type="text"
+              autoComplete="off"
               placeholder="What do you do?"
               {...register('profession', {
                 required: {
