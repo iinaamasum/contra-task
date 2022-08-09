@@ -25,7 +25,7 @@ const ProfileInfoForm = ({ setUserData }) => {
         {/* user Image  */}
         <ProfileImage setProfileImg={setProfileImg} />
 
-        <div className="flex items-center gap-x-[16px] mb-[42px]">
+        <div className="flex items-center gap-x-[16px] mb-[24px]">
           {/* first name */}
           <div className="relative">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
@@ -88,7 +88,7 @@ const ProfileInfoForm = ({ setUserData }) => {
         </div>
 
         {/* location  */}
-        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[42px]">
+        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[24px]">
           <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="location">
             Location
           </label>
@@ -139,7 +139,7 @@ const ProfileInfoForm = ({ setUserData }) => {
 
         {/* skill set  */}
         <div className="relative">
-          <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[42px]">
+          <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[36px]">
             <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="Skills">
               Skills
             </label>

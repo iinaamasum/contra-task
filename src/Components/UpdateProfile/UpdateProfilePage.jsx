@@ -14,7 +14,7 @@ const UpdateProfilePage = () => {
       <Navbar navLogInLink={true} />
 
       <section>
-        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[40px]">
+        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[76px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
@@ -34,7 +34,7 @@ const UpdateProfilePage = () => {
           </div>
 
           {/* form submit btn  */}
-          <div className="bg-[#fefefe] mt-[2.5px] py-[25px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-5">
+          <div className="bg-[#fefefe] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10">
             <button
               type="submit"
               form="user-profile-form"
