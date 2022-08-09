@@ -10,14 +10,15 @@ const UpdateProfilePage = () => {
   const [profileImg, setProfileImg] = useState({});
   const [editedImg, setEditedImg] = useState({});
 
-  console.log(userData);
-  console.log(profileImg);
-
   return (
     <>
       <Navbar />
-      {profileImg ? (
-        <ImageEditorModal profileImg={profileImg} setEditedImg={setEditedImg} />
+      {profileImg.name ? (
+        <ImageEditorModal
+          profileImg={profileImg}
+          setEditedImg={setEditedImg}
+          setProfileImg={setProfileImg}
+        />
       ) : (
         <section>
           <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[76px]">
@@ -38,6 +39,7 @@ const UpdateProfilePage = () => {
                 <ProfileInfoForm
                   setUserData={setUserData}
                   setProfileImg={setProfileImg}
+                  editedImg={editedImg}
                 />
               </div>
             </div>

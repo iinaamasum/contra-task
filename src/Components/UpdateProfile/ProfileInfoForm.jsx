@@ -4,7 +4,7 @@ import LocationSelection from './LocationSelection';
 import ProfileImage from './ProfileImage';
 import SkillSetSelector from './SkillSetSelector';
 
-const ProfileInfoForm = ({ setUserData, setProfileImg }) => {
+const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
   const [skillSet, setSkillSet] = useState([]);
 
@@ -20,7 +20,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg }) => {
     <section>
       <form id="user-profile-form" onSubmit={handleSubmit(onSubmit)}>
         {/* user Image  */}
-        <ProfileImage setProfileImg={setProfileImg} />
+        <ProfileImage setProfileImg={setProfileImg} editedImg={editedImg} />
 
         <div className="flex items-center gap-x-[16px] mb-[24px]">
           {/* first name */}

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { AiFillCamera } from 'react-icons/ai';
 import userImg from '../../Assets/logo/user.png';
 
-const ProfileImage = ({ setProfileImg }) => {
+const ProfileImage = ({ setProfileImg, editedImg }) => {
   const ref = useRef();
   const handleImage = (e) => {
     e.preventDefault();
@@ -22,7 +22,8 @@ const ProfileImage = ({ setProfileImg }) => {
     <section className="flex flex-col items-center justify-center mt-[16px] mb-[24px]">
       <img
         className="w-[180px] h-[180px] rounded-full bg-gray-50"
-        src={userImg}
+        src={editedImg?.preview ? editedImg.preview.canvas : userImg}
+        scale={editedImg?.scale || '1'}
         alt=""
       />
       <input
