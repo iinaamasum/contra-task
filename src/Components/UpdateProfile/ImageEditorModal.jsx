@@ -90,10 +90,10 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
                   name="scale"
                   type="range"
                   onChange={handleScale}
-                  min="1"
+                  min="0.5"
                   max="2"
                   step="0.1"
-                  defaultValue="1"
+                  defaultValue="0.5"
                   className="h-[2px]"
                 />
                 <BsImage size={25} className="ml-2" />
