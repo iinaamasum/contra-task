@@ -4,21 +4,18 @@ import LocationSelection from './LocationSelection';
 import ProfileImage from './ProfileImage';
 import SkillSetSelector from './SkillSetSelector';
 
-const ProfileInfoForm = ({ setUserData }) => {
+const ProfileInfoForm = ({ setUserData, setProfileImg }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
   const [skillSet, setSkillSet] = useState([]);
-  const [profileImg, setProfileImg] = useState({});
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    setUserData(data);
-    console.log(selectedLocation);
-    console.log(skillSet);
+    setUserData({ ...data, selectedLocation, skillSet });
   };
-  console.log(profileImg);
   return (
     <section>
       <form id="user-profile-form" onSubmit={handleSubmit(onSubmit)}>
