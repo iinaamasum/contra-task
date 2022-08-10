@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 
-const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
+const LinkInputForm = ({
+  setLinkInputName,
+  linkInputName,
+  setAddedLinks,
+  addedLinks,
+}) => {
   const [linkUrlVal, setLinkUrlVal] = useState({
     value: '',
   });
@@ -10,11 +15,23 @@ const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    if (data.link_name === '') {
+      await setAddedLinks([
+        ...addedLinks,
+        { ...data, link_name: linkUrlVal.value },
+      ]);
+    } else {
+      await setAddedLinks([...addedLinks, data]);
+    }
+    setLinkInputName({ ...linkInputName, option: '' });
   };
+
+  console.log(addedLinks);
 
   const linkName = (fullLink) => {
     let linkFirstPart = '';
@@ -52,7 +69,6 @@ const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
                 let value = '';
                 if (e.target.value.includes('.'))
                   value = linkName(e.target.value);
-                console.log(value);
                 setLinkUrlVal({ value });
               },
             })}
@@ -68,7 +84,7 @@ const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
       </div>
 
       <div className="relative w-full md:w-[385px] flex flex-col justify-center mx-auto text-center">
-        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[385px] mx-auto flex flex-col text-left mb-[24px]">
+        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[385px] mx-auto flex flex-col text-left mb-[30px]">
           <label
             className="text-gray-500 text-sm mt-1 px-4"
             htmlFor="link_name"
@@ -84,15 +100,16 @@ const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
               placeholder="Link Name"
               defaultValue={linkUrlVal.value}
               {...register('link_name', {
-                required: {
-                  value: true,
-                  message: 'Link Name is required.',
+                validate: () => {
+                  if (watch('link_url') === '') {
+                    return 'Link Name is required';
+                  }
                 },
               })}
             />
           </div>
           <label className="text-[13px] flex text-left absolute top-[67px]">
-            {errors.link_name?.type === 'required' && (
+            {errors.link_name?.type === 'validate' && (
               <span className="label-text-alt text-red-500">
                 {errors.link_name.message}
               </span>

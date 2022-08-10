@@ -19,6 +19,7 @@ const SocialLinks = () => {
     option: '',
     name: '',
   });
+  const [addedLinks, setAddedLinks] = useState([]);
   const navigate = useNavigate();
 
   const handleLinkInput = () => {
@@ -65,6 +66,8 @@ const SocialLinks = () => {
                 <LinkInputForm
                   setLinkInputName={setLinkInputName}
                   linkInputName={linkInputName}
+                  setAddedLinks={setAddedLinks}
+                  addedLinks={addedLinks}
                 />
               ) : (
                 <>
