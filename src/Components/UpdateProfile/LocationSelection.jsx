@@ -4,9 +4,29 @@ import { components } from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 
 const locationArray = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
+  { value: 'Rajshahi', label: 'Rajshahi' },
+  { value: 'Alaska', label: 'Alaska' },
+  { value: 'Bihar', label: 'Bihar' },
+  { value: 'Colombo', label: 'Colombo' },
+  { value: 'Dishal', label: 'Dishal' },
+  { value: 'EverHope', label: 'EverHope' },
+  { value: 'France', label: 'France' },
+  { value: 'Goa', label: 'Goa' },
+  { value: 'Holand', label: 'Holand' },
+  { value: 'Ice', label: 'Ice' },
+  { value: 'Jumpar', label: 'Jumpar' },
+  { value: 'Kashmir', label: 'Kashmir' },
+  { value: 'Linda', label: 'Linda' },
+  { value: 'Murshidabad', label: 'Murshidabad' },
+  { value: 'Okana', label: 'Okana' },
+  { value: 'Persuit', label: 'Persuit' },
+  { value: 'queen', label: 'queen' },
+  { value: 'Richi', label: 'Richi' },
+  { value: 'Sylhet', label: 'Sylhet' },
+  { value: 'Tangail', label: 'Tangail' },
+  { value: 'Uganda', label: 'Uganda' },
+  { value: 'Vulgaria', label: 'Vulgaria' },
+  { value: 'Nothing', label: 'Nothing' },
 ];
 
 const ValueContainer = ({ children, ...props }) => {

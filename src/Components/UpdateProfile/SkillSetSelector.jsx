@@ -3,9 +3,17 @@ import React from 'react';
 import Select from 'react-select';
 
 const skillSetArray = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
+  { value: 'Javascript', label: 'Javascript' },
+  { value: 'C++', label: 'C++' },
+  { value: 'C', label: 'C' },
+  { value: 'Python', label: 'Python' },
+  { value: 'Web dev', label: 'Web dev' },
+  { value: 'Front-end', label: 'Front-end' },
+  { value: 'Backend', label: 'Backend' },
+  { value: 'Java', label: 'Java' },
+  { value: 'IOS', label: 'IOS' },
+  { value: 'Swift', label: 'Swift' },
+  { value: 'Objective C', label: 'Objective C' },
 ];
 
 const styles = {
