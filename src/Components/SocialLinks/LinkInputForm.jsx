@@ -51,6 +51,8 @@ const LinkInputForm = ({
 
     if (fullLink?.length && fullLink.includes('https://www.'))
       linkFirstPart = fullLink.split('.')[1];
+    else if (fullLink?.length && fullLink.includes('www.'))
+      linkFirstPart = fullLink.split('.')[1];
     else if (fullLink?.length) linkFirstPart = fullLink.split('.')[0];
     console.log(linkFirstPart);
     if (linkFirstPart.includes('https:')) {
