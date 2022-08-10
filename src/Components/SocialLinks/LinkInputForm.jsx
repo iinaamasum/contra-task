@@ -48,11 +48,15 @@ const LinkInputForm = ({
 
   const linkName = (fullLink) => {
     let linkFirstPart = '';
-    if (fullLink?.length) linkFirstPart = fullLink.split('.')[0];
-    if (linkFirstPart.includes('http:')) {
+
+    if (fullLink?.length && fullLink.includes('https://www.'))
+      linkFirstPart = fullLink.split('.')[1];
+    else if (fullLink?.length) linkFirstPart = fullLink.split('.')[0];
+    console.log(linkFirstPart);
+    if (linkFirstPart.includes('https:')) {
       linkFirstPart =
         linkFirstPart.charAt(7).toUpperCase() + linkFirstPart.slice(8);
-    } else if (linkFirstPart.includes('https:')) {
+    } else if (linkFirstPart.includes('http:')) {
       linkFirstPart =
         linkFirstPart.charAt(8).toUpperCase() + linkFirstPart.slice(9);
     } else {
