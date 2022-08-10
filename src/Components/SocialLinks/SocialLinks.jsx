@@ -62,7 +62,10 @@ const SocialLinks = () => {
               </div>
 
               {linkInputName.option ? (
-                <LinkInputForm />
+                <LinkInputForm
+                  setLinkInputName={setLinkInputName}
+                  linkInputName={linkInputName}
+                />
               ) : (
                 <>
                   {/* add link  */}
