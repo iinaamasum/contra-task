@@ -1,12 +1,15 @@
 import React from 'react';
 import AuthCode from 'react-auth-code-input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import goldenLogo from '../../Assets/logo/contra-glossy.png';
 import Navbar from '../Shared/Navbar';
 
 const VerificationPinCodePage = () => {
+  const navigate = useNavigate();
   const handleOnChange = (e) => {
-    console.log(e);
+    const pinCode = e;
+    console.log(pinCode);
+    if (pinCode.length === 6) navigate('/update-profile');
   };
   return (
     <>
