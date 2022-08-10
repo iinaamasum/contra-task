@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiPlus } from 'react-icons/bi';
 import {
   FaBehance,
@@ -10,20 +10,31 @@ import {
   FaTwitter,
   FaXbox,
 } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
+import LinkInputForm from './LinkInputForm';
 
 const SocialLinks = () => {
+  const [linkInputName, setLinkInputName] = useState({
+    option: '',
+    name: '',
+  });
+  const navigate = useNavigate();
+
+  const handleLinkInput = () => {
+    setLinkInputName({ ...linkInputName, option: 'addLink' });
+  };
   return (
     <>
       <Navbar />
 
       <section>
-        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[76px]">
+        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[73px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-t-3xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
           >
             <div className="rounded-t-3xl">
               <div className="">
@@ -50,36 +61,76 @@ const SocialLinks = () => {
                 </p>
               </div>
 
-              {/* add link  */}
-              <button className="inline-flex items-center justify-center gap-x-1 border-[2px] border-[#f2c94c] rounded-full px-[30px] py-[11px] font-semibold my-[40px]">
-                <BiPlus size={25} />
-                Add Link
-              </button>
+              {linkInputName.option ? (
+                <LinkInputForm />
+              ) : (
+                <>
+                  {/* add link  */}
+                  <button
+                    onClick={handleLinkInput}
+                    className="inline-flex items-center justify-center gap-x-1 border-[2px] border-[#f2c94c] rounded-full px-[30px] py-[11px] font-semibold my-[40px]"
+                  >
+                    <BiPlus size={25} />
+                    Add Link
+                  </button>
 
-              {/* suggestions  */}
-              <div className="flex items-center justify-center gap-x-3 text-sm text-gray-500">
-                <p className="font-semibold text-base">Suggestions:</p>
-                <button className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full">
-                  <BiPlus size={25} /> Add LinkedIn
-                </button>
-                <button className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full">
-                  <BiPlus size={25} /> Add GitHub
-                </button>
-                <button className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full">
-                  <BiPlus size={25} /> Add Instagram
-                </button>
-              </div>
+                  {/* suggestions  */}
+                  <div className="flex items-center justify-center gap-x-3 text-sm text-gray-500">
+                    <p className="font-semibold text-base">Suggestions:</p>
+                    <button
+                      onClick={() =>
+                        setLinkInputName({
+                          name: 'LinkedIn',
+                          option: 'linkedin',
+                        })
+                      }
+                      className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full"
+                    >
+                      <BiPlus size={25} /> Add LinkedIn
+                    </button>
+                    <button
+                      onClick={() =>
+                        setLinkInputName({
+                          name: 'GitHub',
+                          option: 'github',
+                        })
+                      }
+                      className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full"
+                    >
+                      <BiPlus size={25} /> Add GitHub
+                    </button>
+                    <button
+                      onClick={() =>
+                        setLinkInputName({
+                          name: 'Instagram',
+                          option: 'instagram',
+                        })
+                      }
+                      className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full"
+                    >
+                      <BiPlus size={25} /> Add Instagram
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
           {/* form submit btn  */}
-          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10">
+          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10 flex items-center justify-between px-5">
+            <button
+              onClick={() => navigate('/update-profile')}
+              className="rounded-full h-12 w-[160px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
+            >
+              Previous
+            </button>
             <button
               type="submit"
-              form=""
-              className="rounded-full h-12 w-[100px] sm:w-[148px] mr-[24px] bg-[#f2c94c] hover:bg-[#f2c84cc3] text-black font-semibold text-md md:text-lg shadow-sm"
+              form="user-lins-form"
+              // onClick={handleCancel}
+              className="rounded-full h-12 w-[190px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
             >
-              Next
+              Go to your Profile
             </button>
           </div>
         </article>
