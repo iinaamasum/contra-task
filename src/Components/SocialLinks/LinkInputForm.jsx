@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import {
+  FaBehance,
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+} from 'react-icons/fa';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 
 const LinkInputForm = ({
@@ -92,7 +100,22 @@ const LinkInputForm = ({
             Name your link
           </label>
           <div className="flex items-center  border-b-[1px] border-black px-3">
-            {linkUrlVal.value && <HiOutlineExternalLink size={25} />}
+            {(() => {
+              if (linkUrlVal.value.toLowerCase().includes('github')) {
+                return <FaGithub size={25} />;
+              } else if (linkUrlVal.value.toLowerCase().includes('face')) {
+                return <FaFacebook size={25} />;
+              } else if (linkUrlVal.value.toLowerCase().includes('behance')) {
+                return <FaBehance size={25} />;
+              } else if (linkUrlVal.value.toLowerCase().includes('tiktok')) {
+                return <FaTiktok size={25} />;
+              } else if (linkUrlVal.value.toLowerCase().includes('instagram')) {
+                return <FaInstagram size={25} />;
+              } else if (linkUrlVal.value.toLowerCase().includes('twitter')) {
+                return <FaTwitter size={25} />;
+              }
+              return <HiOutlineExternalLink size={25} />;
+            })()}
 
             <input
               className="py-2 px-2 focus:outline-none"
