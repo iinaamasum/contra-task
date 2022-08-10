@@ -103,7 +103,7 @@ const LinkInputForm = ({
             {(() => {
               if (linkUrlVal.value.toLowerCase().includes('github')) {
                 return <FaGithub size={25} />;
-              } else if (linkUrlVal.value.toLowerCase().includes('face')) {
+              } else if (linkUrlVal.value.toLowerCase().includes('facebook')) {
                 return <FaFacebook size={25} />;
               } else if (linkUrlVal.value.toLowerCase().includes('behance')) {
                 return <FaBehance size={25} />;
@@ -114,7 +114,7 @@ const LinkInputForm = ({
               } else if (linkUrlVal.value.toLowerCase().includes('twitter')) {
                 return <FaTwitter size={25} />;
               }
-              return <HiOutlineExternalLink size={25} />;
+              return linkUrlVal.value && <HiOutlineExternalLink size={25} />;
             })()}
 
             <input
