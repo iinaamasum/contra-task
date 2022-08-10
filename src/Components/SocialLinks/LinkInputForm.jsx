@@ -3,7 +3,24 @@ import { useForm } from 'react-hook-form';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 
 const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
-  const [linkUrlVal, setLinkUrlVal] = useState(false);
+  const [linkUrlVal, setLinkUrlVal] = useState({
+    value: '',
+  });
+  const linkName = (fullLink) => {
+    let linkFirstPart = '';
+    if (fullLink?.length) linkFirstPart = fullLink.split('.')[0];
+    if (linkFirstPart.includes('http:')) {
+      linkFirstPart =
+        linkFirstPart.charAt(7).toUpperCase() + linkFirstPart.slice(8);
+    } else if (linkFirstPart.includes('https:')) {
+      linkFirstPart =
+        linkFirstPart.charAt(8).toUpperCase() + linkFirstPart.slice(9);
+    } else {
+      linkFirstPart =
+        linkFirstPart.charAt(0).toUpperCase() + linkFirstPart.slice(1);
+    }
+    return linkFirstPart;
+  };
   const {
     register,
     handleSubmit,
@@ -14,8 +31,10 @@ const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
   };
 
   const handleLinkUrlChange = (e) => {
-    if (e.target.value) setLinkUrlVal(true);
-    else setLinkUrlVal(false);
+    let value = '';
+    if (e.target.value.includes('.')) value = linkName(e.target.value);
+    console.log(value);
+    setLinkUrlVal({ value });
   };
   return (
     <form id="user-lins-form" onSubmit={handleSubmit(onSubmit)}>
@@ -41,6 +60,7 @@ const LinkInputForm = ({ setLinkInputName, linkInputName }) => {
             className="py-2 px-2 focus:outline-none"
             type="text"
             placeholder="Link Name"
+            defaultValue={linkUrlVal.value}
           />
         </div>
       </div>
