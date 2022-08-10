@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   FaBehance,
   FaFacebook,
   FaGithub,
   FaInstagram,
+  FaLinkedin,
   FaTiktok,
   FaTwitter,
 } from 'react-icons/fa';
@@ -26,6 +27,10 @@ const LinkInputForm = ({
     watch,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    setLinkUrlVal({ value: linkInputName.name });
+  }, [linkInputName]);
   const onSubmit = async (data, e) => {
     e.preventDefault();
     if (data.link_name === '') {
@@ -101,17 +106,25 @@ const LinkInputForm = ({
           </label>
           <div className="flex items-center  border-b-[1px] border-black px-3">
             {(() => {
-              if (linkUrlVal.value.toLowerCase().includes('github')) {
+              if (linkUrlVal?.value?.toLowerCase().includes('github')) {
                 return <FaGithub size={25} />;
-              } else if (linkUrlVal.value.toLowerCase().includes('facebook')) {
+              } else if (
+                linkUrlVal?.value?.toLowerCase().includes('facebook')
+              ) {
                 return <FaFacebook size={25} />;
-              } else if (linkUrlVal.value.toLowerCase().includes('behance')) {
+              } else if (linkUrlVal?.value?.toLowerCase().includes('behance')) {
                 return <FaBehance size={25} />;
-              } else if (linkUrlVal.value.toLowerCase().includes('tiktok')) {
+              } else if (
+                linkUrlVal?.value?.toLowerCase().includes('linkedin')
+              ) {
+                return <FaLinkedin size={25} />;
+              } else if (linkUrlVal?.value?.toLowerCase().includes('tiktok')) {
                 return <FaTiktok size={25} />;
-              } else if (linkUrlVal.value.toLowerCase().includes('instagram')) {
+              } else if (
+                linkUrlVal?.value?.toLowerCase().includes('instagram')
+              ) {
                 return <FaInstagram size={25} />;
-              } else if (linkUrlVal.value.toLowerCase().includes('twitter')) {
+              } else if (linkUrlVal?.value?.toLowerCase().includes('twitter')) {
                 return <FaTwitter size={25} />;
               }
               return linkUrlVal.value && <HiOutlineExternalLink size={25} />;
