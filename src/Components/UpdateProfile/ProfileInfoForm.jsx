@@ -46,7 +46,6 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                   },
                 })}
               />
-              <label className="level font-bold"></label>
             </div>
             <label className="text-[13px] flex text-left absolute top-16">
               {errors.first_name?.type === 'required' && (
