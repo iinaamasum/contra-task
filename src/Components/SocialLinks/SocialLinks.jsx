@@ -35,7 +35,7 @@ const SocialLinks = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#f6f6f6] rounded-b-2xl sm:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-b-2xl sm:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
           >
             <div className="rounded-t-3xl">
               <div className="">

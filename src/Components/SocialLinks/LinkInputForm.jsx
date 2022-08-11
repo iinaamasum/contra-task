@@ -161,16 +161,16 @@ const LinkInputForm = ({
       </div>
 
       {/* link cancel and submit btn  */}
-      <div className="flex items-center justify-center gap-x-4">
+      <div className="flex items-center justify-center gap-x-3">
         <button
           onClick={() => setLinkInputName({ ...linkInputName, option: '' })}
-          className="rounded-full h-12 w-[152px] bg-[#f0e0e0a6] hover:bg-[#f0e0e0] text-black font-semibold text-md md:text-lg shadow-sm"
+          className="rounded-full h-12 w-[152px] bg-[#f0f0f0] hover:bg-[#eeeeee] text-black font-semibold text-md md:text-lg shadow-sm"
         >
           Cancel
         </button>
         <button
           type="submit"
-          className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-2 border-[#f2c94c] text-black font-semibold text-md md:text-lg shadow-sm"
+          className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
         >
           Save Link
         </button>
