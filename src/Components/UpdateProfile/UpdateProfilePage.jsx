@@ -21,7 +21,7 @@ const UpdateProfilePage = () => {
         />
       ) : (
         <section className="">
-          <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[76px] relative">
+          <article className="flex flex-col items-center justify-center px-4 mt-[1.5rem] md:mt-[76px] relative">
             <div
               style={{
                 boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
@@ -49,7 +49,7 @@ const UpdateProfilePage = () => {
               <button
                 type="submit"
                 form="user-profile-form"
-                className="rounded-full h-12 w-[120px] sm:w-[148px] mr-[24px] bg-[#f2c94c] hover:bg-[#f2c84cc3] text-black font-semibold text-md md:text-lg shadow-sm"
+                className="rounded-full h-12 w-[120px] sm:w-[148px] mr-[24px] bg-[#f0bc27] hover:bg-[#f2c84ce1] text-black font-semibold text-lg shadow-sm"
               >
                 Next
               </button>

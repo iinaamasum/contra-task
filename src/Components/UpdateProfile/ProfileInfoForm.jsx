@@ -25,9 +25,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
         {/* user Image  */}
         <ProfileImage setProfileImg={setProfileImg} editedImg={editedImg} />
 
-        <div className="md:flex items-center md:gap-x-[16px] mb-[24px]">
+        <div className="md:flex items-center md:gap-x-[16px] mb-[30px]">
           {/* first name */}
-          <div className="relative w-full mb-[24px] md:mb-0">
+          <div className="relative w-full mb-[30px] md:mb-0">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-sm mt-1 px-4"
@@ -89,7 +89,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
         </div>
 
         {/* location  */}
-        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[24px]">
+        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[30px]">
           <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="location">
             Location
           </label>
@@ -125,7 +125,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
               })}
             />
           </div>
-          <label className="text-[13px] flex text-left absolute top-16">
+          <label className="text-[13px] flex text-left absolute top-[66px]">
             {errors.profession?.type === 'required' && (
               <span className="label-text-alt text-red-500">
                 {errors.profession.message}
@@ -147,7 +147,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
             </label>
             <SkillSetSelector setSkillSet={setSkillSet} />
           </div>
-          <label className="text-[13px] flex text-left absolute top-[70px]">
+          <label className="text-[13px] flex text-left absolute top-[72px]">
             {errors.skills?.type === 'required' && (
               <span className="label-text-alt text-red-500">
                 {errors.skills.message}

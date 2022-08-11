@@ -30,7 +30,7 @@ const SocialLinks = () => {
       <Navbar />
 
       <section>
-        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[72px]">
+        <article className="flex flex-col items-center justify-center px-4 mt-[1.5rem] md:mt-[72px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
