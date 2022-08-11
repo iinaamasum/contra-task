@@ -1,21 +1,61 @@
 import React from 'react';
 import AuthCode from 'react-auth-code-input';
+import toast from 'react-hot-toast';
+import { AiOutlineCheckCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import goldenLogo from '../../Assets/logo/contra-glossy.png';
 import Navbar from '../Shared/Navbar';
 
 const VerificationPinCodePage = () => {
   const navigate = useNavigate();
+
   const handleOnChange = (e) => {
     const pinCode = e.toUpperCase();
     console.log(pinCode);
-    if (pinCode.length === 6) navigate('/update-profile');
+    if (pinCode !== '123456' && pinCode.length === 6) {
+      toast.error(
+        'This code does not match. Please check your code and try again.',
+        {
+          duration: 2000,
+          position: 'top-right',
+          style: {},
+          className: 'bg-red-500 text-white',
+          icon: <AiOutlineInfoCircle size={60} />,
+          iconTheme: {
+            primary: 'red',
+            secondary: 'red',
+          },
+          ariaProps: {
+            role: 'status',
+            'aria-live': 'polite',
+          },
+        }
+      );
+    }
+    if (pinCode === '123456' && pinCode.length === 6) {
+      toast.success('Authentication successful.', {
+        duration: 2000,
+        position: 'top-right',
+        style: {},
+        className: 'bg-green-500 text-white',
+        icon: <AiOutlineCheckCircle size={30} />,
+        iconTheme: {
+          primary: 'green',
+          secondary: 'green',
+        },
+        ariaProps: {
+          role: 'status',
+          'aria-live': 'polite',
+        },
+      });
+      navigate('/update-profile');
+    }
   };
   return (
     <>
       <Navbar />
       <section>
-        <article className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-10 mt-[1.5rem] md:mt-[40px]">
+        <article className="flex flex-col items-center justify-center px-4 sm:px-8 mt-[1.5rem] md:mt-[40px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',

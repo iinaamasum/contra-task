@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Components/Auth/Login';
 import SignUp from './Components/Auth/SignUp';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/update-profile" element={<UpdateProfilePage />} />
           <Route path="/social-links" element={<SocialLinks />} />
         </Routes>
+        <Toaster />
       </ScrollToTop>
     </section>
   );
