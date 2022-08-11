@@ -8,7 +8,7 @@ import UpdateProfilePage from './Components/UpdateProfile/UpdateProfilePage';
 
 function App() {
   return (
-    <section className="bg-[#f7f7f7] min-h-screen">
+    <section className="bg-[#f0f0f0] min-h-screen">
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Login />} />

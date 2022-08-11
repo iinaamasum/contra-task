@@ -164,7 +164,7 @@ const LinkInputForm = ({
       <div className="flex items-center justify-center gap-x-4">
         <button
           onClick={() => setLinkInputName({ ...linkInputName, option: '' })}
-          className="rounded-full h-12 w-[148px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
+          className="rounded-full h-12 w-[152px] bg-[#f0e0e0a6] hover:bg-[#f0e0e0] text-black font-semibold text-md md:text-lg shadow-sm"
         >
           Cancel
         </button>

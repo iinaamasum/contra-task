@@ -30,12 +30,12 @@ const SocialLinks = () => {
       <Navbar />
 
       <section>
-        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[73px]">
+        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[72px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#f6f6f6] rounded-b-2xl sm:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
           >
             <div className="rounded-t-3xl">
               <div className="">
@@ -81,41 +81,45 @@ const SocialLinks = () => {
                   </button>
 
                   {/* suggestions  */}
-                  <div className="flex items-center justify-center gap-x-3 text-sm text-gray-500">
-                    <p className="font-semibold text-base">Suggestions:</p>
-                    <button
-                      onClick={() =>
-                        setLinkInputName({
-                          name: 'LinkedIn',
-                          option: 'linkedin',
-                        })
-                      }
-                      className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full"
-                    >
-                      <BiPlus size={25} /> Add LinkedIn
-                    </button>
-                    <button
-                      onClick={() =>
-                        setLinkInputName({
-                          name: 'GitHub',
-                          option: 'github',
-                        })
-                      }
-                      className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full"
-                    >
-                      <BiPlus size={25} /> Add GitHub
-                    </button>
-                    <button
-                      onClick={() =>
-                        setLinkInputName({
-                          name: 'Instagram',
-                          option: 'instagram',
-                        })
-                      }
-                      className="inline-flex items-center justify-center gap-x-1 bg-white py-2 px-2 rounded-full"
-                    >
-                      <BiPlus size={25} /> Add Instagram
-                    </button>
+                  <div className="md:flex items-center justify-center gap-x-3 text-sm text-gray-500">
+                    <p className="font-semibold text-base mb-[32px] md:mb-0">
+                      Suggestions:
+                    </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-x-[8px]">
+                      <button
+                        onClick={() =>
+                          setLinkInputName({
+                            name: 'LinkedIn',
+                            option: 'linkedin',
+                          })
+                        }
+                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[132px] mb-3 sm:mb-0 rounded-full"
+                      >
+                        <BiPlus size={25} /> Add LinkedIn
+                      </button>
+                      <button
+                        onClick={() =>
+                          setLinkInputName({
+                            name: 'GitHub',
+                            option: 'github',
+                          })
+                        }
+                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[132px] mb-3 sm:mb-0 rounded-full"
+                      >
+                        <BiPlus size={25} /> Add GitHub
+                      </button>
+                      <button
+                        onClick={() =>
+                          setLinkInputName({
+                            name: 'Instagram',
+                            option: 'instagram',
+                          })
+                        }
+                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[132px] mb-3 sm:mb-0 rounded-full"
+                      >
+                        <BiPlus size={25} /> Add Instagram
+                      </button>
+                    </div>
                   </div>
                 </>
               )}
@@ -123,7 +127,7 @@ const SocialLinks = () => {
           </div>
 
           {/* form submit btn  */}
-          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10 flex items-center justify-between px-5">
+          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-3xl leading-5 text-[15px] flex items-center justify-between px-5 absolute bottom-0 md:relative">
             <button
               onClick={() => navigate('/update-profile')}
               className="rounded-full h-12 w-[160px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
