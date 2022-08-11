@@ -25,7 +25,7 @@ function App() {
           toastOptions={{
             success: {
               style: {
-                background: 'rgb(34 197 94);',
+                background: 'rgb(34 197 94)',
               },
             },
             error: {

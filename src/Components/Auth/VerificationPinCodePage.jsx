@@ -18,9 +18,12 @@ const VerificationPinCodePage = () => {
         {
           duration: 2000,
           position: 'top-right',
-          style: {},
+          style: {
+            color: 'white',
+            background: 'rgb(239 68 68)',
+          },
           className: 'bg-red-500 text-white',
-          icon: <AiOutlineInfoCircle size={60} />,
+          icon: <AiOutlineInfoCircle size={60} color="white" />,
           iconTheme: {
             primary: 'red',
             secondary: 'red',
@@ -36,9 +39,12 @@ const VerificationPinCodePage = () => {
       toast.success('Authentication successful.', {
         duration: 2000,
         position: 'top-right',
-        style: {},
+        style: {
+          color: 'white',
+          background: 'rgb(34 197 94)',
+        },
         className: 'bg-green-500 text-white',
-        icon: <AiOutlineCheckCircle size={30} />,
+        icon: <AiOutlineCheckCircle size={30} color="white" />,
         iconTheme: {
           primary: 'green',
           secondary: 'green',
