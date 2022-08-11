@@ -11,7 +11,7 @@ const EmailForm = ({ handleSubmit, btnTitle }) => {
           Email
         </label>
         <input
-          className="py-2 px-4 focus:outline-none border-b-[1px] border-black"
+          className="py-[7px] px-4 focus:outline-none border-b-[1px] border-black"
           type="text"
         />
       </div>
