@@ -20,13 +20,13 @@ const UpdateProfilePage = () => {
           setProfileImg={setProfileImg}
         />
       ) : (
-        <section>
-          <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[76px]">
+        <section className="">
+          <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[76px] relative">
             <div
               style={{
                 boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
               }}
-              className="bg-[#fefefe] rounded-t-3xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
+              className="bg-[#fefefe] rounded-b-2xl md:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center mb-44 md:mb-0"
             >
               <div className="rounded-t-3xl">
                 <div className="">
@@ -45,11 +45,11 @@ const UpdateProfilePage = () => {
             </div>
 
             {/* form submit btn  */}
-            <div className="bg-[#fefefe] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10">
+            <div className="bg-[#fefefe] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-2xl leading-5 text-[15px] bottom-0 md:relative md:mb-10 fixed">
               <button
                 type="submit"
                 form="user-profile-form"
-                className="rounded-full h-12 w-[100px] sm:w-[148px] mr-[24px] bg-[#f2c94c] hover:bg-[#f2c84cc3] text-black font-semibold text-md md:text-lg shadow-sm"
+                className="rounded-full h-12 w-[120px] sm:w-[148px] mr-[24px] bg-[#f2c94c] hover:bg-[#f2c84cc3] text-black font-semibold text-md md:text-lg shadow-sm"
               >
                 Next
               </button>
