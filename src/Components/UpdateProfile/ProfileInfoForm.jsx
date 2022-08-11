@@ -76,7 +76,6 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                   },
                 })}
               />
-              <label className="level font-bold"></label>
             </div>
             <label className="text-[13px] flex text-left absolute top-16">
               {errors.last_name?.type === 'required' && (
@@ -141,24 +140,24 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
 
         {/* skill set  */}
         <div className="relative">
-          <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[36px]">
+          <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[36px] relative">
             <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="Skills">
               Skills
             </label>
             <SkillSetSelector setSkillSet={setSkillSet} />
+            <label className="text-[13px] flex text-left absolute -bottom-5">
+              {errors.skills?.type === 'required' && (
+                <span className="label-text-alt text-red-500">
+                  {errors.skills.message}
+                </span>
+              )}
+              {!errors?.skills && (
+                <span className="label-text-alt text-gray-400">
+                  e.g. Product Design, Front End Engineering, etc.
+                </span>
+              )}
+            </label>
           </div>
-          <label className="text-[13px] flex text-left absolute top-[72px]">
-            {errors.skills?.type === 'required' && (
-              <span className="label-text-alt text-red-500">
-                {errors.skills.message}
-              </span>
-            )}
-            {!errors?.skills && (
-              <span className="label-text-alt text-gray-400">
-                e.g. Product Design, Front End Engineering, etc.
-              </span>
-            )}
-          </label>
         </div>
       </form>
     </section>

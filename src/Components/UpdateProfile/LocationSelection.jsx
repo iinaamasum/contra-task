@@ -56,7 +56,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
       '&:hover': {
         background: '#f6f6f6',
       },
-      padding: 7,
+      padding: 5,
       borderRadius: '0px',
       margin: '0px',
       cursor: 'pointer',

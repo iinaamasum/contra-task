@@ -23,7 +23,7 @@ const styles = {
     background: '#fff',
     border: '0px',
     boxShadow: 'none',
-    height: '45px',
+    // height: '45px',
     paddingLeft: 6,
   }),
   option: (styles, state) => {
