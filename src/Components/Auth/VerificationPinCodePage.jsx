@@ -7,7 +7,7 @@ import Navbar from '../Shared/Navbar';
 const VerificationPinCodePage = () => {
   const navigate = useNavigate();
   const handleOnChange = (e) => {
-    const pinCode = e;
+    const pinCode = e.toUpperCase();
     console.log(pinCode);
     if (pinCode.length === 6) navigate('/update-profile');
   };
@@ -37,7 +37,8 @@ const VerificationPinCodePage = () => {
                 onChange={handleOnChange}
                 inputClassName="w-5 text-2xl font-bold text-orange-500 focus:outline-none placeholder:text-5xl placeholder:text-gray-400"
                 placeholder="."
-                containerClassName="border-2 border-[#F9E4A6] rounded-2xl py-[12px] grid grid-cols-6 gap-6 px-10 bg-[#fff]"
+                autoFocus={true}
+                containerClassName="border-[1px] border-[#f0bc27] rounded-2xl py-[14px] grid grid-cols-6 gap-6 px-[30px] bg-[#fff]"
               />
             </div>
           </div>
