@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
 import EmailForm from './EmailForm';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [enteredEmail, setEnteredEmail] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate('/verify-pin-code');
-  };
+  console.log(enteredEmail);
+  useEffect(() => {
+    if (enteredEmail?.email) {
+      navigate('/verify-pin-code');
+    }
+  }, [enteredEmail, navigate]);
   return (
     <>
       <Navbar />
       <section>
-        <article className="flex flex-col items-center justify-center px-4 md:px-10 mt-[1.5rem] md:mt-[40px]">
+        <article className="flex flex-col items-center justify-center px-4 mt-[1.5rem] md:mt-[40px]">
           <div
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-2xl px-[32px] py-[24px] md:px-[160px] md:py-[66px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-2xl px-[32px] py-[24px] md:px-[160px] md:pt-[66px] md:pb-[80px] w-full md:w-[800px] mx-auto text-center"
           >
             {/* heading  */}
             <h4 className="text-[1.4375rem] md:text-[2.215rem] font-[700] mb-[19px] tracking-tight">
@@ -27,7 +30,7 @@ const Login = () => {
             </h4>
 
             {/* email form section  */}
-            <EmailForm handleSubmit={handleSubmit} btnTitle="Log In" />
+            <EmailForm setEnteredEmail={setEnteredEmail} btnTitle="Log In" />
           </div>
 
           {/* sign up redirect section  */}
