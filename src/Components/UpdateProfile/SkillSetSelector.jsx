@@ -51,6 +51,7 @@ const styles = {
       borderRadius: '20px',
       boxShadow: 'rgb(228 232 247 / 70%) 0px 0px 10px',
       padding: '5px',
+      fontSize: '18px',
     };
   },
   multiValueLabel: (styles, { data }) => ({
