@@ -35,7 +35,7 @@ const SocialLinks = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-b-2xl sm:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-b-2xl sm:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center mb-32 md:mb-0"
           >
             <div className="rounded-t-3xl">
               <div className="">
@@ -127,19 +127,14 @@ const SocialLinks = () => {
           </div>
 
           {/* form submit btn  */}
-          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-3xl leading-5 text-[15px] flex items-center justify-between px-5 absolute bottom-0 md:relative">
+          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-3xl leading-5 text-[15px] flex items-center justify-between px-5  bottom-0 md:relative md:mb-10 fixed">
             <button
               onClick={() => navigate('/update-profile')}
-              className="rounded-full h-12 w-[160px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
+              className="rounded-full h-12 w-[120px] sm:w-[160px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
             >
               Previous
             </button>
-            <button
-              type="submit"
-              form="user-lins-form"
-              // onClick={handleCancel}
-              className="rounded-full h-12 w-[190px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
-            >
+            <button className="rounded-full h-12 w-[160px] sm:w-[190px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm">
               Go to your Profile
             </button>
           </div>
