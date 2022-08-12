@@ -47,7 +47,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                 })}
               />
             </div>
-            <label className="text-[13px] flex text-left absolute top-16">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute top-16">
               {errors.first_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.first_name.message}
@@ -77,7 +77,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                 })}
               />
             </div>
-            <label className="text-[13px] flex text-left absolute top-16">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute top-16">
               {errors.last_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.last_name.message}
@@ -94,7 +94,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
           </label>
           <LocationSelection setSelectedLocation={setSelectedLocation} />
         </div>
-        <label className="text-[13px] flex text-left">
+        <label className="text-[13px] font-medium left-5 flex text-left">
           {errors.location?.type === 'required' && (
             <span className="label-text-alt text-red-500">
               {errors.location.message}
@@ -124,7 +124,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
               })}
             />
           </div>
-          <label className="text-[13px] flex text-left absolute top-[66px]">
+          <label className="text-[13px] font-medium left-5 flex text-left absolute top-[66px]">
             {errors.profession?.type === 'required' && (
               <span className="label-text-alt text-red-500">
                 {errors.profession.message}
@@ -145,7 +145,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
               Skills
             </label>
             <SkillSetSelector setSkillSet={setSkillSet} />
-            <label className="text-[13px] flex text-left absolute -bottom-5">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute -bottom-5">
               {errors.skills?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.skills.message}

@@ -34,7 +34,10 @@ const ValueContainer = ({ children, ...props }) => {
     components.ValueContainer && (
       <components.ValueContainer {...props}>
         {!!children && (
-          <BiLocationPlus size={30} className="mr-2 relative -top-8 -left-8" />
+          <BiLocationPlus
+            size={30}
+            className="mr-2 relative -top-8 -left-8 text-gray-700"
+          />
         )}
         {children}
       </components.ValueContainer>
