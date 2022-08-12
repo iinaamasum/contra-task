@@ -36,9 +36,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                 First Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none bg-white"
+                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm"
+                placeholder="Enter Your First Name"
                 type="text"
-                autoComplete="off"
                 {...register('first_name', {
                   required: {
                     value: true,
@@ -66,9 +66,9 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
                 Last Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none bg-white"
+                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm"
+                placeholder="Enter Your Last Name"
                 type="text"
-                autoComplete="off"
                 {...register('last_name', {
                   required: {
                     value: true,
@@ -112,7 +112,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
               Professional One-Liner
             </label>
             <input
-              className="py-[6.5px] px-4 focus:outline-none bg-white"
+              className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm"
               type="text"
               autoComplete="off"
               placeholder="What do you do?"

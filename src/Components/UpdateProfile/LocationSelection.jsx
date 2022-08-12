@@ -56,7 +56,10 @@ const LocationSelection = ({ setSelectedLocation }) => {
       '&:hover': {
         background: '#f6f6f6',
       },
-      padding: 5,
+      paddingLeft: 10,
+      paddingRight: 10,
+      paddingTop: 5,
+      paddingBottom: 5,
       borderRadius: '0px',
       margin: '0px',
       cursor: 'pointer',
@@ -75,6 +78,16 @@ const LocationSelection = ({ setSelectedLocation }) => {
       cursor: 'text',
       height: '36px',
     }),
+    placeholder: (base) => ({
+      ...base,
+      color: '#9ca3af',
+      fontSize: '14px',
+    }),
+    menu: (base) => ({
+      ...base,
+      marginTop: 2,
+      paddingTop: 0,
+    }),
   };
 
   return (
@@ -86,6 +99,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
       components={{ ValueContainer }}
       options={locationArray}
       styles={styles}
+      className="placeholder:text-gray-400 placeholder:text-sm"
     />
   );
 };

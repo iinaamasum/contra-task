@@ -23,7 +23,6 @@ const styles = {
     background: '#fff',
     border: '0px',
     boxShadow: 'none',
-    // height: '45px',
     paddingLeft: 6,
   }),
   option: (styles, state) => {
@@ -39,6 +38,10 @@ const styles = {
       '&:hover': {
         background: '#f6f6f6',
       },
+      paddingLeft: 10,
+      paddingRight: 10,
+      paddingTop: 5,
+      paddingBottom: 5,
     };
   },
   multiValue: (styles, { data }) => {
@@ -61,6 +64,16 @@ const styles = {
       backgroundColor: '#fff',
       color: 'red',
     },
+  }),
+  placeholder: (base) => ({
+    ...base,
+    color: '#9ca3af',
+    fontSize: '14px',
+  }),
+  menu: (base) => ({
+    ...base,
+    marginTop: 2,
+    paddingTop: 0,
   }),
 };
 
