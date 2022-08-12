@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import LocationSelection from './LocationSelection';
 import ProfileImage from './ProfileImage';
+import './ProfileInfoForm.css';
 import SkillSetSelector from './SkillSetSelector';
 
 const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
@@ -19,6 +20,7 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
     setUserData({ ...data, selectedLocation, skillSet });
     navigate('/social-links');
   };
+
   return (
     <section>
       <form id="user-profile-form" onSubmit={handleSubmit(onSubmit)}>
@@ -145,7 +147,10 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
               Skills
             </label>
             <SkillSetSelector setSkillSet={setSkillSet} />
-            <label className="text-[13px] font-medium left-5 flex text-left absolute -bottom-5">
+            <label
+              style={{}}
+              className="text-[13px] font-medium left-5 flex text-left absolute -bottom-5 bottom__fix"
+            >
               {errors.skills?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.skills.message}
