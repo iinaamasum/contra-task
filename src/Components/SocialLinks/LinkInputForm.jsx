@@ -17,6 +17,8 @@ const LinkInputForm = ({
   linkInputName,
   setAddedLinks,
   addedLinks,
+  linkFixedInputName,
+  setLinkFixedInputName,
 }) => {
   const [linkUrlVal, setLinkUrlVal] = useState({
     value: '',
@@ -32,7 +34,8 @@ const LinkInputForm = ({
 
   useEffect(() => {
     setLinkUrlVal({ value: linkInputName.name });
-  }, [linkInputName]);
+  }, [linkInputName, linkFixedInputName]);
+
   const onSubmit = async (data, e) => {
     if (data.link_name === '') {
       await setAddedLinks([
@@ -46,10 +49,10 @@ const LinkInputForm = ({
   };
 
   console.log(addedLinks);
+  console.log(linkFixedInputName);
 
   const linkName = (fullLink) => {
     let linkFirstPart = '';
-
     // split the url
     if (fullLink?.length && fullLink.includes('https://www.'))
       linkFirstPart = fullLink.split('.')[1];
@@ -115,7 +118,10 @@ const LinkInputForm = ({
           </label>
           <div className="flex items-center  border-b-[1px] border-black px-3">
             {(() => {
-              if (linkUrlVal?.value?.toLowerCase().includes('github')) {
+              if (
+                linkFixedInputName?.name === 'GitHub' ||
+                linkUrlVal?.value?.toLowerCase().includes('github')
+              ) {
                 return <FaGithub size={25} />;
               } else if (
                 linkUrlVal?.value?.toLowerCase().includes('facebook')
@@ -124,12 +130,14 @@ const LinkInputForm = ({
               } else if (linkUrlVal?.value?.toLowerCase().includes('behance')) {
                 return <FaBehance size={25} />;
               } else if (
+                linkFixedInputName?.name === 'LinkedIn' ||
                 linkUrlVal?.value?.toLowerCase().includes('linkedin')
               ) {
                 return <FaLinkedin size={25} />;
               } else if (linkUrlVal?.value?.toLowerCase().includes('tiktok')) {
                 return <FaTiktok size={25} />;
               } else if (
+                linkFixedInputName?.name === 'Instagram' ||
                 linkUrlVal?.value?.toLowerCase().includes('instagram')
               ) {
                 return <FaInstagram size={25} />;
@@ -143,7 +151,7 @@ const LinkInputForm = ({
               className="py-2 px-2 focus:outline-none"
               type="text"
               placeholder="Link Name"
-              defaultValue={linkUrlVal.value}
+              defaultValue={linkFixedInputName?.name || linkUrlVal.value}
               {...register('link_name', {
                 validate: () => {
                   if (watch('link_url') === '') {
@@ -166,22 +174,27 @@ const LinkInputForm = ({
       {/* link cancel and submit btn  */}
       <div className="flex items-center justify-center gap-x-3">
         <button
-          onClick={() => setLinkInputName({ ...linkInputName, option: '' })}
-          className="rounded-full h-12 w-[152px] bg-[#f0f0f0] hover:bg-[#eeeeee] text-black font-semibold text-md md:text-lg shadow-sm"
+          onClick={() => {
+            if (linkFixedInputName?.option)
+              setLinkFixedInputName({ name: '', option: '' });
+            else if (linkInputName?.option)
+              setLinkInputName({ name: '', option: '' });
+          }}
+          className="rounded-full h-12 w-[152px] bg-[#f0f0f0] hover:bg-[#e3e3e3] text-black font-semibold text-md md:text-lg shadow-sm"
         >
           Cancel
         </button>
         {isLoading ? (
           <button
             type="submit"
-            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
+            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f2f2f2] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
           >
             <BtnLoading />
           </button>
         ) : (
           <button
             type="submit"
-            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
+            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f2f2f2] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
           >
             Save Link
           </button>

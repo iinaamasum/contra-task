@@ -19,6 +19,10 @@ const SocialLinks = () => {
     option: '',
     name: '',
   });
+  const [linkFixedInputName, setLinkFixedInputName] = useState({
+    option: '',
+    name: '',
+  });
   const [addedLinks, setAddedLinks] = useState([]);
   const navigate = useNavigate();
 
@@ -62,12 +66,14 @@ const SocialLinks = () => {
                 </p>
               </div>
 
-              {linkInputName.option ? (
+              {linkInputName.option || linkFixedInputName.option ? (
                 <LinkInputForm
                   setLinkInputName={setLinkInputName}
                   linkInputName={linkInputName}
                   setAddedLinks={setAddedLinks}
                   addedLinks={addedLinks}
+                  linkFixedInputName={linkFixedInputName}
+                  setLinkFixedInputName={setLinkFixedInputName}
                 />
               ) : (
                 <>
@@ -88,7 +94,7 @@ const SocialLinks = () => {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-x-[8px]">
                       <button
                         onClick={() =>
-                          setLinkInputName({
+                          setLinkFixedInputName({
                             name: 'LinkedIn',
                             option: 'linkedin',
                           })
@@ -99,7 +105,7 @@ const SocialLinks = () => {
                       </button>
                       <button
                         onClick={() =>
-                          setLinkInputName({
+                          setLinkFixedInputName({
                             name: 'GitHub',
                             option: 'github',
                           })
@@ -110,7 +116,7 @@ const SocialLinks = () => {
                       </button>
                       <button
                         onClick={() =>
-                          setLinkInputName({
+                          setLinkFixedInputName({
                             name: 'Instagram',
                             option: 'instagram',
                           })
