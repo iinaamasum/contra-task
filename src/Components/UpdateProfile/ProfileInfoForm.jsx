@@ -6,7 +6,12 @@ import ProfileImage from './ProfileImage';
 import './ProfileInfoForm.css';
 import SkillSetSelector from './SkillSetSelector';
 
-const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
+const ProfileInfoForm = ({
+  setUserData,
+  setProfileImg,
+  editedImg,
+  setIsLoading,
+}) => {
   const [selectedLocation, setSelectedLocation] = useState({});
   const [skillSet, setSkillSet] = useState([]);
   const navigate = useNavigate();
@@ -17,8 +22,12 @@ const ProfileInfoForm = ({ setUserData, setProfileImg, editedImg }) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    setUserData({ ...data, selectedLocation, skillSet });
-    navigate('/social-links');
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setUserData({ ...data, selectedLocation, skillSet });
+      navigate('/social-links');
+    }, 2000);
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BtnLoading from '../Shared/BtnLoading';
 import Navbar from '../Shared/Navbar';
 import ImageEditorModal from './ImageEditorModal';
 import ProfileInfoForm from './ProfileInfoForm';
@@ -9,6 +10,7 @@ const UpdateProfilePage = () => {
   const [userData, setUserData] = useState({});
   const [profileImg, setProfileImg] = useState({});
   const [editedImg, setEditedImg] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>
@@ -40,19 +42,30 @@ const UpdateProfilePage = () => {
                   setUserData={setUserData}
                   setProfileImg={setProfileImg}
                   editedImg={editedImg}
+                  setIsLoading={setIsLoading}
                 />
               </div>
             </div>
 
             {/* form submit btn  */}
             <div className="bg-[#fefefe] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-2xl leading-5 text-[15px] bottom-0 md:relative md:mb-10 fixed">
-              <button
-                type="submit"
-                form="user-profile-form"
-                className="rounded-full h-12 w-[120px] sm:w-[148px] mr-[24px] bg-[#f0bc27] hover:bg-[#f2c84ce1] text-black font-semibold text-lg shadow-sm"
-              >
-                Next
-              </button>
+              {isLoading ? (
+                <button
+                  type="submit"
+                  form="user-profile-form"
+                  className="rounded-full h-12 w-[120px] sm:w-[148px] mr-[24px] bg-[#f0bc27] hover:bg-[#f2c84ce1] text-black font-semibold text-lg shadow-sm"
+                >
+                  <BtnLoading />
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  form="user-profile-form"
+                  className="rounded-full h-12 w-[120px] sm:w-[148px] mr-[24px] bg-[#f0bc27] hover:bg-[#f2c84ce1] text-black font-semibold text-lg shadow-sm"
+                >
+                  Next
+                </button>
+              )}
             </div>
           </article>
         </section>

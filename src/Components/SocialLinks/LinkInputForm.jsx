@@ -10,6 +10,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import { HiOutlineExternalLink } from 'react-icons/hi';
+import BtnLoading from '../Shared/BtnLoading';
 
 const LinkInputForm = ({
   setLinkInputName,
@@ -20,6 +21,7 @@ const LinkInputForm = ({
   const [linkUrlVal, setLinkUrlVal] = useState({
     value: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -33,15 +35,19 @@ const LinkInputForm = ({
   }, [linkInputName]);
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    if (data.link_name === '') {
-      await setAddedLinks([
-        ...addedLinks,
-        { ...data, link_name: linkUrlVal.value },
-      ]);
-    } else {
-      await setAddedLinks([...addedLinks, data]);
-    }
-    setLinkInputName({ ...linkInputName, option: '' });
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      if (data.link_name === '') {
+        setAddedLinks([
+          ...addedLinks,
+          { ...data, link_name: linkUrlVal.value },
+        ]);
+      } else {
+        setAddedLinks([...addedLinks, data]);
+      }
+      setLinkInputName({ ...linkInputName, option: '' });
+    }, 2000);
   };
 
   console.log(addedLinks);
@@ -168,12 +174,21 @@ const LinkInputForm = ({
         >
           Cancel
         </button>
-        <button
-          type="submit"
-          className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
-        >
-          Save Link
-        </button>
+        {isLoading ? (
+          <button
+            type="submit"
+            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
+          >
+            <BtnLoading />
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f6f6f6] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
+          >
+            Save Link
+          </button>
+        )}
       </div>
     </form>
   );
