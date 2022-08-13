@@ -82,7 +82,7 @@ const SocialLinks = () => {
 
                   {/* suggestions  */}
                   <div className="md:flex items-center justify-center gap-x-3 text-sm text-gray-500">
-                    <p className="font-semibold text-base mb-[32px] md:mb-0">
+                    <p className="font-semibold text-base mb-5 md:mb-0">
                       Suggestions:
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-x-[8px]">
