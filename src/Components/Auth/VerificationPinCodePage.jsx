@@ -81,8 +81,8 @@ const VerificationPinCodePage = () => {
             <div className="w-full flex items-center justify-center mt-5">
               <AuthCode
                 onChange={handleOnChange}
-                inputClassName="w-5 text-2xl font-bold text-orange-500 focus:outline-none placeholder:text-5xl placeholder:text-gray-400"
-                placeholder="."
+                inputClassName="w-5 text-2xl font-bold text-orange-500 focus:outline-none placeholder:text-2xl placeholder:text-gray-300 text-center uppercase"
+                placeholder="•"
                 autoFocus={true}
                 containerClassName="border-[1px] border-[#f0bc27] rounded-2xl py-[14px] grid grid-cols-6 gap-6 px-[30px] bg-[#fff]"
               />

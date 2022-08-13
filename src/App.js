@@ -21,20 +21,7 @@ function App() {
           <Route path="/update-profile" element={<UpdateProfilePage />} />
           <Route path="/social-links" element={<SocialLinks />} />
         </Routes>
-        <Toaster
-          toastOptions={{
-            success: {
-              style: {
-                background: 'rgb(34 197 94)',
-              },
-            },
-            error: {
-              style: {
-                background: 'rgb(239 68 68)',
-              },
-            },
-          }}
-        />
+        <Toaster />
       </ScrollToTop>
     </section>
   );

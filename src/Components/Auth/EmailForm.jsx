@@ -29,11 +29,20 @@ const EmailForm = ({ setEnteredEmail, btnTitle }) => {
               value: true,
               message: 'Email is required.',
             },
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+              message: 'Invalid Email Provided !!!',
+            },
           })}
         />
       </div>
-      <label className="text-[13px] flex text-left absolute top-[66px] left-1">
+      <label className="text-[13px] flex text-left absolute top-[66px] left-5">
         {errors.email?.type === 'required' && (
+          <span className="label-text-alt text-red-500">
+            {errors.email.message}
+          </span>
+        )}
+        {errors.email?.type === 'pattern' && (
           <span className="label-text-alt text-red-500">
             {errors.email.message}
           </span>
