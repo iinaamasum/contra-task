@@ -35,7 +35,7 @@ const SocialLinks = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-b-2xl sm:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center mb-32 md:mb-0"
+            className="bg-[#fafafa] rounded-b-2xl md:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center mb-32 md:mb-0"
           >
             <div className="rounded-t-3xl">
               <div className="">
@@ -74,7 +74,7 @@ const SocialLinks = () => {
                   {/* add link  */}
                   <button
                     onClick={handleLinkInput}
-                    className="inline-flex items-center justify-center gap-x-1 border-[2px] border-[#f2c94c] rounded-full px-[30px] py-[11px] font-semibold my-[40px]"
+                    className="inline-flex items-center justify-center gap-x-1 border-[2px] border-[#f2c94c] rounded-full px-[30px] py-[11px] font-semibold my-[40px] hover:bg-[#f2f2f2]"
                   >
                     <BiPlus size={25} />
                     Add Link
@@ -93,7 +93,7 @@ const SocialLinks = () => {
                             option: 'linkedin',
                           })
                         }
-                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[132px] mb-3 sm:mb-0 rounded-full"
+                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
                       >
                         <BiPlus size={25} /> Add LinkedIn
                       </button>
@@ -104,7 +104,7 @@ const SocialLinks = () => {
                             option: 'github',
                           })
                         }
-                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[132px] mb-3 sm:mb-0 rounded-full"
+                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
                       >
                         <BiPlus size={25} /> Add GitHub
                       </button>
@@ -115,7 +115,7 @@ const SocialLinks = () => {
                             option: 'instagram',
                           })
                         }
-                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[132px] mb-3 sm:mb-0 rounded-full"
+                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
                       >
                         <BiPlus size={25} /> Add Instagram
                       </button>
@@ -127,14 +127,14 @@ const SocialLinks = () => {
           </div>
 
           {/* form submit btn  */}
-          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-3xl leading-5 text-[15px] flex items-center justify-between px-5  bottom-0 md:relative md:mb-10 fixed">
+          <div className="bg-[#fff] mt-[2px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-3xl leading-5 text-[15px] flex items-center justify-between px-5  bottom-0 md:relative md:mb-10 fixed">
             <button
               onClick={() => navigate('/update-profile')}
-              className="rounded-full h-12 w-[120px] sm:w-[160px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm"
+              className="rounded-full h-12 w-[120px] sm:w-[160px] bg-[#f2f2f2] hover:bg-[#e3e3e3] text-black font-semibold text-md md:text-lg shadow-sm"
             >
               Previous
             </button>
-            <button className="rounded-full h-12 w-[160px] sm:w-[190px] bg-[#f2f2f2] hover:bg-[#f0f0f0] text-black font-semibold text-md md:text-lg shadow-sm">
+            <button className="rounded-full h-12 w-[160px] sm:w-[190px] bg-[#f2f2f2] hover:bg-[#e3e3e3] text-black font-semibold text-md md:text-lg shadow-sm">
               Go to your Profile
             </button>
           </div>

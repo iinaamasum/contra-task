@@ -48,7 +48,7 @@ const UpdateProfilePage = () => {
             </div>
 
             {/* form submit btn  */}
-            <div className="bg-[#fefefe] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-2xl leading-5 text-[15px] bottom-0 md:relative md:mb-10 fixed">
+            <div className="bg-[#fefefe] mt-[2px] py-[20px] w-full md:w-[800px] mx-auto text-end text-gray-500 md:rounded-b-2xl leading-5 text-[15px] bottom-0 md:relative md:mb-10 fixed">
               {isLoading ? (
                 <button
                   type="submit"
