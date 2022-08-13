@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiPlus } from 'react-icons/bi';
 import {
   FaBehance,
@@ -23,12 +23,35 @@ const SocialLinks = () => {
     option: '',
     name: '',
   });
+  const [addedDefaultLinks, setAddedDefaultLinks] = useState({
+    github: false,
+    linkedin: false,
+    instagram: false,
+  });
+
   const [addedLinks, setAddedLinks] = useState([]);
   const navigate = useNavigate();
 
   const handleLinkInput = () => {
     setLinkInputName({ ...linkInputName, option: 'addLink' });
   };
+
+  useEffect(() => {
+    if (addedLinks) {
+      addedLinks.map((link) => {
+        if (link.link_name.toLowerCase().includes('github')) {
+          setAddedDefaultLinks({ ...addedDefaultLinks, github: true });
+        }
+        if (link.link_name.toLowerCase().includes('linkedin')) {
+          setAddedDefaultLinks({ ...addedDefaultLinks, linkedin: true });
+        }
+        if (link.link_name.toLowerCase().includes('instagram')) {
+          setAddedDefaultLinks({ ...addedDefaultLinks, instagram: true });
+        }
+      });
+    }
+  }, [addedLinks]);
+  console.log(addedLinks);
   return (
     <>
       <Navbar />
@@ -88,43 +111,55 @@ const SocialLinks = () => {
 
                   {/* suggestions  */}
                   <div className="md:flex items-center justify-center gap-x-3 text-sm text-gray-500">
-                    <p className="font-semibold text-base mb-5 md:mb-0">
-                      Suggestions:
-                    </p>
+                    {!(
+                      addedDefaultLinks.github &&
+                      addedDefaultLinks.instagram &&
+                      addedDefaultLinks.linkedin
+                    ) && (
+                      <p className="font-semibold text-base mb-5 md:mb-0">
+                        Suggestions:
+                      </p>
+                    )}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-x-[8px]">
-                      <button
-                        onClick={() =>
-                          setLinkFixedInputName({
-                            name: 'LinkedIn',
-                            option: 'linkedin',
-                          })
-                        }
-                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
-                      >
-                        <BiPlus size={25} /> Add LinkedIn
-                      </button>
-                      <button
-                        onClick={() =>
-                          setLinkFixedInputName({
-                            name: 'GitHub',
-                            option: 'github',
-                          })
-                        }
-                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
-                      >
-                        <BiPlus size={25} /> Add GitHub
-                      </button>
-                      <button
-                        onClick={() =>
-                          setLinkFixedInputName({
-                            name: 'Instagram',
-                            option: 'instagram',
-                          })
-                        }
-                        className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
-                      >
-                        <BiPlus size={25} /> Add Instagram
-                      </button>
+                      {!addedDefaultLinks.linkedin && (
+                        <button
+                          onClick={() =>
+                            setLinkFixedInputName({
+                              name: 'LinkedIn',
+                              option: 'linkedin',
+                            })
+                          }
+                          className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
+                        >
+                          <BiPlus size={25} /> Add LinkedIn
+                        </button>
+                      )}
+                      {!addedDefaultLinks.github && (
+                        <button
+                          onClick={() =>
+                            setLinkFixedInputName({
+                              name: 'GitHub',
+                              option: 'github',
+                            })
+                          }
+                          className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
+                        >
+                          <BiPlus size={25} /> Add GitHub
+                        </button>
+                      )}
+                      {!addedDefaultLinks.instagram && (
+                        <button
+                          onClick={() =>
+                            setLinkFixedInputName({
+                              name: 'Instagram',
+                              option: 'instagram',
+                            })
+                          }
+                          className="inline-flex items-center justify-center gap-x-1 bg-white py-[7px] w-[160px] sm:w-[140px] mb-3 sm:mb-0 rounded-full"
+                        >
+                          <BiPlus size={25} /> Add Instagram
+                        </button>
+                      )}
                     </div>
                   </div>
                 </>

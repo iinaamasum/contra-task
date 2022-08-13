@@ -49,9 +49,6 @@ const LinkInputForm = ({
     setLinkFixedInputName({ name: '', option: '' });
   };
 
-  console.log(addedLinks);
-  console.log(linkFixedInputName);
-
   const linkName = (fullLink) => {
     let linkFirstPart = '';
     // split the url
@@ -175,7 +172,8 @@ const LinkInputForm = ({
       {/* link cancel and submit btn  */}
       <div className="flex items-center justify-center gap-x-3">
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             if (linkFixedInputName?.option)
               setLinkFixedInputName({ name: '', option: '' });
             else if (linkInputName?.option)
