@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 import { TbGridDots, TbTrash } from 'react-icons/tb';
 import { VscEdit } from 'react-icons/vsc';
 
@@ -33,6 +34,11 @@ const AddedLinksTable = ({ link }) => {
                           {link_name.toLowerCase().includes('instagram') && (
                             <FaInstagram size={20} />
                           )}
+                          {!(
+                            link_name.toLowerCase().includes('github') ||
+                            link_name.toLowerCase().includes('instagram') ||
+                            link_name.toLowerCase().includes('linkedin')
+                          ) && <HiOutlineExternalLink size={20} />}
                           <p className="font-semibold">{link_name}</p>
                         </div>
                       </div>
