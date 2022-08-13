@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
+import AddedLinksTable from './AddedLinksTable';
 import LinkInputForm from './LinkInputForm';
 
 const SocialLinks = () => {
@@ -108,6 +109,11 @@ const SocialLinks = () => {
                     <BiPlus size={25} />
                     Add Link
                   </button>
+
+                  {/* added links table  */}
+                  {addedLinks.map((link) => (
+                    <AddedLinksTable key={link.link_url} link={link} />
+                  ))}
 
                   {/* suggestions  */}
                   <div className="md:flex items-center justify-center gap-x-3 text-sm text-gray-500">

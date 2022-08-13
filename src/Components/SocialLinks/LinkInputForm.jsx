@@ -37,6 +37,7 @@ const LinkInputForm = ({
   }, [linkInputName, linkFixedInputName]);
 
   const onSubmit = async (data, e) => {
+    e.preventDefault();
     if (data.link_name === '') {
       await setAddedLinks([
         ...addedLinks,
