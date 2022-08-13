@@ -111,9 +111,16 @@ const SocialLinks = () => {
                   </button>
 
                   {/* added links table  */}
-                  {addedLinks.map((link) => (
-                    <AddedLinksTable key={link.link_url} link={link} />
-                  ))}
+                  <div className="mb-[30px]">
+                    {addedLinks.map((link) => (
+                      <>
+                        {!(addedLinks[0] === link) && (
+                          <div className="h-[1px] max-w-[340px] bg-gray-300 mx-auto"></div>
+                        )}
+                        <AddedLinksTable key={link.link_url} link={link} />
+                      </>
+                    ))}
+                  </div>
 
                   {/* suggestions  */}
                   <div className="md:flex items-center justify-center gap-x-3 text-sm text-gray-500">
