@@ -45,7 +45,8 @@ const LinkInputForm = ({
     } else {
       await setAddedLinks([...addedLinks, data]);
     }
-    setLinkInputName({ ...linkInputName, option: '' });
+    setLinkInputName({ name: '', option: '' });
+    setLinkFixedInputName({ name: '', option: '' });
   };
 
   console.log(addedLinks);
@@ -54,8 +55,8 @@ const LinkInputForm = ({
   const linkName = (fullLink) => {
     let linkFirstPart = '';
     // split the url
-    if (fullLink?.length && fullLink.includes('https://www.'))
-      linkFirstPart = fullLink.split('.')[1];
+    if (fullLink?.length && fullLink.includes('www.m.'))
+      linkFirstPart = fullLink.split('.')[2];
     else if (fullLink?.length && fullLink.includes('www.'))
       linkFirstPart = fullLink.split('.')[1];
     else linkFirstPart = fullLink.split('.')[0];
