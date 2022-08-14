@@ -112,7 +112,11 @@ const SocialLinks = () => {
                   </button>
 
                   {/* added links table  */}
-                  <div className="mb-[30px]">
+                  <div
+                    className={`${
+                      addedLinks.length > 0 ? 'mb-[30px]' : 'mb-0'
+                    } `}
+                  >
                     <AddedLinksTable
                       addedLinks={addedLinks}
                       setAddedLinks={setAddedLinks}

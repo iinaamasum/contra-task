@@ -11,13 +11,13 @@ const AddedLinksTable = ({
   setAddedDefaultLinks,
 }) => {
   const handleDeleteTableData = (link_url, link_name) => {
-    if (link_name.includes('GitHub')) {
+    if (link_name.toLowerCase().includes('github')) {
       setAddedDefaultLinks({ ...addedDefaultLinks, github: false });
     }
-    if (link_name.includes('Instagram')) {
+    if (link_name.toLowerCase().includes('instagram')) {
       setAddedDefaultLinks({ ...addedDefaultLinks, instagram: false });
     }
-    if (link_name.includes('LinkedIn')) {
+    if (link_name.toLowerCase().includes('linkedin')) {
       setAddedDefaultLinks({ ...addedDefaultLinks, linkedin: false });
     }
     const remaining = addedLinks.filter(

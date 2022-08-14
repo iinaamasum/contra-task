@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import {
   FaBehance,
   FaFacebook,
@@ -38,13 +40,37 @@ const LinkInputForm = ({
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    if (data.link_name === '') {
-      await setAddedLinks([
-        ...addedLinks,
-        { ...data, link_name: linkUrlVal.value },
-      ]);
+    const alreadyExist = addedLinks?.find(
+      (link) => link.link_url === data.link_url
+    );
+    if (alreadyExist) {
+      toast.error('Entered url already added. Please change the url.', {
+        duration: 2000,
+        position: 'top-right',
+        style: {
+          color: 'white',
+          background: 'rgb(239 68 68)',
+        },
+        className: 'bg-red-500 text-white',
+        icon: <AiOutlineInfoCircle size={60} color="white" />,
+        iconTheme: {
+          primary: 'red',
+          secondary: 'red',
+        },
+        ariaProps: {
+          role: 'status',
+          'aria-live': 'polite',
+        },
+      });
     } else {
-      await setAddedLinks([...addedLinks, data]);
+      if (data.link_name === '') {
+        await setAddedLinks([
+          ...addedLinks,
+          { ...data, link_name: linkUrlVal.value },
+        ]);
+      } else {
+        await setAddedLinks([...addedLinks, data]);
+      }
     }
     setLinkInputName({ name: '', option: '' });
     setLinkFixedInputName({ name: '', option: '' });
