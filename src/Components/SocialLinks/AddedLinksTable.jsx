@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { TbGridDots, TbTrash } from 'react-icons/tb';
 import { VscEdit } from 'react-icons/vsc';
+import LinkEditingForm from './LinkEditingForm';
 
 const AddedLinksTable = ({
   addedLinks,
@@ -10,6 +11,12 @@ const AddedLinksTable = ({
   addedDefaultLinks,
   setAddedDefaultLinks,
 }) => {
+  const [isLinkEditing, setIsLinkEditing] = useState(false);
+  const [prevLink, setPrevLink] = useState({
+    link_url: '',
+    link_name: '',
+  });
+
   const handleDeleteTableData = (link_url, link_name) => {
     if (link_name.toLowerCase().includes('github')) {
       setAddedDefaultLinks({ ...addedDefaultLinks, github: false });
@@ -25,14 +32,26 @@ const AddedLinksTable = ({
     );
     setAddedLinks(remaining);
   };
+
+  const handleEditTableData = (link_url, link_name) => {
+    setPrevLink({ link_url, link_name });
+    setIsLinkEditing(true);
+  };
   console.log(addedLinks);
-  return (
-    <div class="flex flex-col max-w-[425px] mx-auto text-center">
-      <div class="">
-        <div class="min-w-full inline-block align-middle">
-          <div class="overflow-hidden">
-            <table class="min-w-full divide-y divide-gray-200">
-              <tbody class="">
+  return isLinkEditing ? (
+    <LinkEditingForm
+      prevLink={prevLink}
+      addedLinks={addedLinks}
+      setAddedLinks={setAddedLinks}
+      setIsLinkEditing={setIsLinkEditing}
+    />
+  ) : (
+    <div className="flex flex-col max-w-[425px] mx-auto text-center">
+      <div className="">
+        <div className="min-w-full inline-block align-middle">
+          <div className="overflow-hidden">
+            <table className="min-w-full divide-y divide-gray-200">
+              <tbody className="">
                 <tr>
                   {addedLinks.map((link) => (
                     <div
@@ -81,6 +100,9 @@ const AddedLinksTable = ({
                       </td>
                       <td className="flex items-center gap-x-3 justify-end w-[20%] px-1 py-4">
                         <VscEdit
+                          onClick={() => {
+                            handleEditTableData(link.link_url, link.link_name);
+                          }}
                           size={27}
                           className="cursor-pointer hover:text-orange-500 font-light"
                         />

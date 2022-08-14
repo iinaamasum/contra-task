@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
-import { AiOutlineInfoCircle } from 'react-icons/ai';
 import {
   FaBehance,
   FaFacebook,
@@ -12,20 +10,11 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import { HiOutlineExternalLink } from 'react-icons/hi';
-import BtnLoading from '../Shared/BtnLoading';
 
-const LinkInputForm = ({
-  setLinkInputName,
-  linkInputName,
-  setAddedLinks,
-  addedLinks,
-  linkFixedInputName,
-  setLinkFixedInputName,
-}) => {
+const LinkEditingForm = ({ addedLinks, prevLink, setIsLinkEditing }) => {
   const [linkUrlVal, setLinkUrlVal] = useState({
     value: '',
   });
-  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -35,45 +24,29 @@ const LinkInputForm = ({
   } = useForm();
 
   useEffect(() => {
-    setLinkUrlVal({ value: linkInputName.name });
-  }, [linkInputName, linkFixedInputName]);
+    setLinkUrlVal({ value: prevLink?.link_url });
+  }, [prevLink]);
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    const alreadyExist = addedLinks?.find(
-      (link) => link.link_url === data.link_url
-    );
-    if (alreadyExist) {
-      toast.error('Entered url already added. Please change the url.', {
-        duration: 5000,
-        position: 'top-right',
-        style: {
-          color: 'white',
-          background: 'rgb(239 68 68)',
-        },
-        className: 'bg-red-500 text-white',
-        icon: <AiOutlineInfoCircle size={60} color="white" />,
-        iconTheme: {
-          primary: 'red',
-          secondary: 'red',
-        },
-        ariaProps: {
-          role: 'status',
-          'aria-live': 'polite',
-        },
+
+    if (data.link_name === '') {
+      addedLinks.map((link) => {
+        if (link.link_name === prevLink.link_name) {
+          link.link_name = linkUrlVal.value;
+          link.link_url = data.link_url;
+        }
       });
     } else {
-      if (data.link_name === '') {
-        await setAddedLinks([
-          ...addedLinks,
-          { ...data, link_name: linkUrlVal.value },
-        ]);
-      } else {
-        await setAddedLinks([...addedLinks, data]);
-      }
+      addedLinks.map((link) => {
+        if (link.link_name === prevLink.link_name) {
+          link.link_name = data.link_name;
+          link.link_url = data.link_url;
+        }
+      });
     }
-    setLinkInputName({ name: '', option: '' });
-    setLinkFixedInputName({ name: '', option: '' });
+
+    setIsLinkEditing(false);
   };
 
   const linkName = (fullLink) => {
@@ -98,7 +71,6 @@ const LinkInputForm = ({
     }
     return linkFirstPart;
   };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="relative w-full md:w-[385px] flex flex-col justify-center mx-auto text-center">
@@ -113,6 +85,7 @@ const LinkInputForm = ({
             className="py-2 px-4 focus:outline-none border-b-[1px] border-black"
             placeholder="Link url"
             type="text"
+            defaultValue={prevLink.link_url}
             {...register('link_url', {
               required: {
                 value: true,
@@ -147,7 +120,7 @@ const LinkInputForm = ({
           <div className="flex items-center border-b-[1px] border-black px-3">
             {(() => {
               if (
-                linkFixedInputName?.name === 'GitHub' ||
+                prevLink?.link_name.toLowerCase().includes('github') ||
                 linkUrlVal?.value?.toLowerCase().includes('github')
               ) {
                 return <FaGithub size={25} />;
@@ -158,14 +131,14 @@ const LinkInputForm = ({
               } else if (linkUrlVal?.value?.toLowerCase().includes('behance')) {
                 return <FaBehance size={25} />;
               } else if (
-                linkFixedInputName?.name === 'LinkedIn' ||
+                prevLink?.link_name.toLowerCase().includes('linkedin') ||
                 linkUrlVal?.value?.toLowerCase().includes('linkedin')
               ) {
                 return <FaLinkedin size={25} />;
               } else if (linkUrlVal?.value?.toLowerCase().includes('tiktok')) {
                 return <FaTiktok size={25} />;
               } else if (
-                linkFixedInputName?.name === 'Instagram' ||
+                prevLink?.link_name.toLowerCase().includes('instagram') ||
                 linkUrlVal?.value?.toLowerCase().includes('instagram')
               ) {
                 return <FaInstagram size={25} />;
@@ -179,7 +152,7 @@ const LinkInputForm = ({
               className="py-2 px-2 focus:outline-none"
               type="text"
               placeholder="Link Name"
-              defaultValue={linkFixedInputName?.name || linkUrlVal.value}
+              defaultValue={prevLink.link_name}
               {...register('link_name', {
                 validate: () => {
                   if (watch('link_url') === '') {
@@ -204,33 +177,22 @@ const LinkInputForm = ({
         <button
           onClick={(e) => {
             e.preventDefault();
-            if (linkFixedInputName?.option)
-              setLinkFixedInputName({ name: '', option: '' });
-            else if (linkInputName?.option)
-              setLinkInputName({ name: '', option: '' });
+            setIsLinkEditing(false);
           }}
           className="rounded-full h-12 w-[152px] bg-[#f0f0f0] hover:bg-[#e3e3e3] text-black font-semibold text-md md:text-lg shadow-sm"
         >
           Cancel
         </button>
-        {isLoading ? (
-          <button
-            type="submit"
-            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f2f2f2] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
-          >
-            <BtnLoading />
-          </button>
-        ) : (
-          <button
-            type="submit"
-            className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f2f2f2] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
-          >
-            Save Link
-          </button>
-        )}
+
+        <button
+          type="submit"
+          className="rounded-full h-12 w-[148px] bg-[#fff] hover:bg-[#f2f2f2] border-[1px] border-[#f0bc27] text-black font-semibold text-md md:text-lg shadow-sm"
+        >
+          Save Link
+        </button>
       </div>
     </form>
   );
 };
 
-export default LinkInputForm;
+export default LinkEditingForm;
