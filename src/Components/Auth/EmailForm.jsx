@@ -24,11 +24,11 @@ const EmailForm = ({ setEnteredEmail, btnTitle }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="relative">
       <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[478px] mx-auto flex flex-col text-left mb-[48px]">
-        <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="email">
+        <label className="text-gray-500 text-[12px] mt-1 px-4" htmlFor="email">
           Email
         </label>
         <input
-          className="py-[7px] px-4 focus:outline-none border-b-[1px] border-black"
+          className="py-[7px] px-4 focus:outline-none border-b-[1px] border-black placeholder:text-gray-400 placeholder:text-sm"
           placeholder="Enter Your Email"
           type="text"
           {...register('email', {

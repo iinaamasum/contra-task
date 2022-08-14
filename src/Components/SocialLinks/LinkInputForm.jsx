@@ -77,7 +77,10 @@ const LinkInputForm = ({
     <form id="user-lins-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="relative w-full md:w-[385px] flex flex-col justify-center mx-auto text-center">
         <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[385px] mx-auto flex flex-col text-left mb-[24px] mt-[38px]">
-          <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="email">
+          <label
+            className="text-gray-500 text-[12px] mt-1 px-4"
+            htmlFor="email"
+          >
             URL
           </label>
           <input
@@ -110,12 +113,12 @@ const LinkInputForm = ({
       <div className="relative w-full md:w-[385px] flex flex-col justify-center mx-auto text-center">
         <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[385px] mx-auto flex flex-col text-left mb-[30px]">
           <label
-            className="text-gray-500 text-sm mt-1 px-4"
+            className="text-gray-500 text-[12px] mt-1 px-4"
             htmlFor="link_name"
           >
             Name your link
           </label>
-          <div className="flex items-center  border-b-[1px] border-black px-3">
+          <div className="flex items-center border-b-[1px] border-black px-3">
             {(() => {
               if (
                 linkFixedInputName?.name === 'GitHub' ||

@@ -41,7 +41,7 @@ const ProfileInfoForm = ({
           <div className="relative w-full mb-[30px] md:mb-0">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
-                className="text-gray-500 text-sm mt-1 px-4"
+                className="text-gray-500 text-[12px] mt-1 px-4"
                 htmlFor="First-name"
               >
                 First Name
@@ -71,7 +71,7 @@ const ProfileInfoForm = ({
           <div className="relative w-full">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
-                className="text-gray-500 text-sm mt-1 px-4"
+                className="text-gray-500 text-[12px] mt-1 px-4"
                 htmlFor="Last-name"
               >
                 Last Name
@@ -100,7 +100,10 @@ const ProfileInfoForm = ({
 
         {/* location  */}
         <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[30px]">
-          <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="location">
+          <label
+            className="text-gray-500 text-[12px] mt-1 px-4"
+            htmlFor="location"
+          >
             Location
           </label>
           <LocationSelection setSelectedLocation={setSelectedLocation} />
@@ -117,7 +120,7 @@ const ProfileInfoForm = ({
         <div className="relative">
           <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[42px]">
             <label
-              className="text-gray-500 text-sm mt-1 px-4"
+              className="text-gray-500 text-[12px] mt-1 px-4"
               htmlFor="profession"
             >
               Professional One-Liner
@@ -152,7 +155,10 @@ const ProfileInfoForm = ({
         {/* skill set  */}
         <div className="relative">
           <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[36px] relative">
-            <label className="text-gray-500 text-sm mt-1 px-4" htmlFor="Skills">
+            <label
+              className="text-gray-500 text-[12px] mt-1 px-4"
+              htmlFor="Skills"
+            >
               Skills
             </label>
             <SkillSetSelector setSkillSet={setSkillSet} />

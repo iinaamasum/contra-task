@@ -13,13 +13,13 @@ const AddedLinksTable = ({ link }) => {
           <div class="overflow-hidden">
             <table class="min-w-full divide-y divide-gray-200">
               <tbody class="">
-                <tr className="cursor-pointer hover:bg-[#eeeeee]">
+                <tr className="cursor-pointer hover:bg-[#eeeeee] flex items-center justify-between px-1 py-4 rounded-lg">
                   <a
                     title={link_url}
                     href={link_url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-between px-1 py-4 rounded-2xl"
+                    className="w-[80%]"
                   >
                     <td>
                       <div className="flex items-center gap-x-8 justify-start">
@@ -43,17 +43,17 @@ const AddedLinksTable = ({ link }) => {
                         </div>
                       </div>
                     </td>
-                    <td className="flex items-center gap-x-3 justify-end">
-                      <VscEdit
-                        size={27}
-                        className="cursor-pointer hover:text-orange-500 font-light"
-                      />
-                      <TbTrash
-                        size={27}
-                        className="cursor-pointer hover:text-orange-500 font-light"
-                      />
-                    </td>
                   </a>
+                  <td className="flex items-center gap-x-3 justify-end w-[20%]">
+                    <VscEdit
+                      size={27}
+                      className="cursor-pointer hover:text-orange-500 font-light"
+                    />
+                    <TbTrash
+                      size={27}
+                      className="cursor-pointer hover:text-orange-500 font-light"
+                    />
+                  </td>
                 </tr>
               </tbody>
             </table>
