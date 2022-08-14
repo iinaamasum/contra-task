@@ -117,7 +117,12 @@ const SocialLinks = () => {
                         {!(addedLinks[0] === link) && (
                           <div className="h-[1px] max-w-[340px] bg-gray-300 mx-auto"></div>
                         )}
-                        <AddedLinksTable key={link.link_url} link={link} />
+                        <AddedLinksTable
+                          addedLinks={addedLinks}
+                          setAddedLinks={setAddedLinks}
+                          key={link.link_url}
+                          link={link}
+                        />
                       </>
                     ))}
                   </div>
