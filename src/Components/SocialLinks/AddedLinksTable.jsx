@@ -37,7 +37,6 @@ const AddedLinksTable = ({
     setPrevLink({ link_url, link_name });
     setIsLinkEditing(true);
   };
-  console.log(addedLinks);
   return isLinkEditing ? (
     <LinkEditingForm
       prevLink={prevLink}

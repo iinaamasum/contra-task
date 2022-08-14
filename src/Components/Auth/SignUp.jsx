@@ -8,7 +8,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [enteredEmail, setEnteredEmail] = useState({});
 
-  console.log(enteredEmail);
   useEffect(() => {
     if (enteredEmail?.email) {
       navigate('/verify-pin-code');

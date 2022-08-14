@@ -53,7 +53,6 @@ const SocialLinks = () => {
     }
   }, [addedLinks]);
 
-  console.log(addedLinks);
   return (
     <>
       <Navbar />
@@ -105,7 +104,7 @@ const SocialLinks = () => {
                   {/* add link  */}
                   <button
                     onClick={handleLinkInput}
-                    className="inline-flex items-center justify-center gap-x-1 border-[2px] border-[#f2c94c] rounded-full px-[30px] py-[11px] font-semibold my-[40px] hover:bg-[#f2f2f2]"
+                    className="inline-flex items-center justify-center gap-x-1 border-[2px] border-[#f2c94c] rounded-full px-[30px] py-[11px] font-semibold mt-[40px] mb-[20px] hover:bg-[#f2f2f2]"
                   >
                     <BiPlus size={25} />
                     Add Link

@@ -11,7 +11,6 @@ const VerificationPinCodePage = () => {
 
   const handleOnChange = (e) => {
     const pinCode = e.toUpperCase();
-    console.log(pinCode);
     if (pinCode !== '123456' && pinCode.length === 6) {
       toast.error(
         'This code does not match. Please check your code and try again.',
