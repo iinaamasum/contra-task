@@ -10,6 +10,7 @@ const ProfileImage = ({ setProfileImg, editedImg }) => {
   };
 
   const handleImgChange = (event) => {
+    event.preventDefault();
     const fileObj = event.target.files && event.target.files[0];
     if (!fileObj) {
       return;

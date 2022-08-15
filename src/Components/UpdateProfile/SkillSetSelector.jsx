@@ -51,7 +51,7 @@ const styles = {
       borderRadius: '20px',
       boxShadow: 'rgb(228 232 247 / 70%) 0px 0px 10px',
       padding: '5px',
-      fontSize: '18px',
+      fontSize: 16,
     };
   },
   multiValueLabel: (styles, { data }) => ({
@@ -69,12 +69,16 @@ const styles = {
   placeholder: (base) => ({
     ...base,
     color: '#9ca3af',
-    fontSize: '14px',
+    fontSize: 14,
   }),
   menu: (base) => ({
     ...base,
     marginTop: 2,
     paddingTop: 0,
+  }),
+  singleValue: (base) => ({
+    ...base,
+    fontSize: 14,
   }),
 };
 

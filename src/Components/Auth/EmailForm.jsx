@@ -28,7 +28,7 @@ const EmailForm = ({ setEnteredEmail, btnTitle }) => {
           Email
         </label>
         <input
-          className="py-[7px] px-4 focus:outline-none border-b-[1px] border-black placeholder:text-gray-400 placeholder:text-sm"
+          className="py-[7px] px-4 focus:outline-none border-b-[1px] border-black text-sm placeholder:text-gray-400 placeholder:text-sm"
           placeholder="Enter Your Email"
           type="text"
           {...register('email', {

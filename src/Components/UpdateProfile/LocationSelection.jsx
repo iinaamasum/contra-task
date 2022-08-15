@@ -54,7 +54,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
     option: (provided, state) => ({
       ...provided,
       color: '#000',
-      fontSize: '16px',
+      fontSize: 14,
       background: state.isFocused || state.isSelected ? '#f6f6f6' : 'white',
       '&:hover': {
         background: '#f6f6f6',
@@ -84,12 +84,16 @@ const LocationSelection = ({ setSelectedLocation }) => {
     placeholder: (base) => ({
       ...base,
       color: '#9ca3af',
-      fontSize: '14px',
+      fontSize: 14,
     }),
     menu: (base) => ({
       ...base,
       marginTop: 2,
       paddingTop: 0,
+    }),
+    singleValue: (base) => ({
+      ...base,
+      fontSize: 14,
     }),
   };
 

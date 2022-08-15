@@ -11,6 +11,7 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
   });
 
   const handleScale = (e) => {
+    e.preventDefault();
     const scale = parseFloat(e.target.value);
     setImageData({ ...imageData, scale });
   };
@@ -20,7 +21,8 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
     setProfileImg({});
   };
 
-  const handleSave = (data) => {
+  const handleSave = (e) => {
+    e.preventDefault();
     const img = editor.current.getImageScaledToCanvas().toDataURL(1.0);
     const canvas = editor.current.getImage().toDataURL(1.0);
     const canvasScaled = editor.current.getImageScaledToCanvas();

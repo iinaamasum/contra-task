@@ -21,7 +21,8 @@ const ProfileInfoForm = ({
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
+    e.preventDefault();
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
@@ -47,7 +48,7 @@ const ProfileInfoForm = ({
                 First Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm"
+                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm text-sm"
                 placeholder="Enter Your First Name"
                 type="text"
                 {...register('first_name', {
@@ -77,7 +78,7 @@ const ProfileInfoForm = ({
                 Last Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm"
+                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm text-sm"
                 placeholder="Enter Your Last Name"
                 type="text"
                 {...register('last_name', {
@@ -126,7 +127,7 @@ const ProfileInfoForm = ({
               Professional One-Liner
             </label>
             <input
-              className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm"
+              className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm text-sm"
               type="text"
               autoComplete="off"
               placeholder="What do you do?"

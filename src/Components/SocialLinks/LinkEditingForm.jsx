@@ -132,7 +132,7 @@ const LinkEditingForm = ({
             URL
           </label>
           <input
-            className="py-2 px-4 focus:outline-none border-b-[1px] border-black"
+            className="py-2 px-4 focus:outline-none border-b-[1px] border-black text-sm placeholder:text-sm placeholder:text-gray-400"
             placeholder="Link url"
             type="text"
             defaultValue={prevLink.link_url}
@@ -199,7 +199,7 @@ const LinkEditingForm = ({
             })()}
 
             <input
-              className="py-2 px-2 focus:outline-none"
+              className="py-2 px-2 focus:outline-none text-sm placeholder:text-sm placeholder:text-gray-400"
               type="text"
               placeholder="Link Name"
               defaultValue={prevLink.link_name}
