@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import {
   FaBehance,
   FaFacebook,
@@ -35,43 +37,66 @@ const LinkEditingForm = ({
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-
-    if (
-      !data?.link_name.toLowerCase().includes('github') &&
-      prevLink.link_name.toLowerCase().includes('github')
-    ) {
-      setAddedDefaultLinks({ ...addedDefaultLinks, github: false });
-    }
-    if (
-      !data?.link_name.toLowerCase().includes('instagram') &&
-      prevLink.link_name.toLowerCase().includes('instagram')
-    ) {
-      setAddedDefaultLinks({ ...addedDefaultLinks, instagram: false });
-    }
-    if (
-      !data?.link_name.toLowerCase().includes('linkedin') &&
-      prevLink.link_name.toLowerCase().includes('linkedin')
-    ) {
-      setAddedDefaultLinks({ ...addedDefaultLinks, linkedin: false });
-    }
-
-    if (data.link_name === '') {
-      addedLinks.map((link) => {
-        if (link.link_name === prevLink.link_name) {
-          link.link_name = linkUrlVal.value;
-          link.link_url = data.link_url;
-        }
+    const alreadyExist = addedLinks?.find(
+      (link) => link.link_url === data.link_url
+    );
+    if (alreadyExist) {
+      toast.error('Entered url already added. Please change the url.', {
+        duration: 5000,
+        position: 'top-right',
+        style: {
+          color: 'white',
+          background: 'rgb(239 68 68)',
+        },
+        className: 'bg-red-500 text-white',
+        icon: <AiOutlineInfoCircle size={60} color="white" />,
+        iconTheme: {
+          primary: 'red',
+          secondary: 'red',
+        },
+        ariaProps: {
+          role: 'status',
+          'aria-live': 'polite',
+        },
       });
     } else {
-      addedLinks.map((link) => {
-        if (link.link_name === prevLink.link_name) {
-          link.link_name = data.link_name;
-          link.link_url = data.link_url;
-        }
-      });
-    }
+      if (
+        !data?.link_name.toLowerCase().includes('github') &&
+        prevLink.link_name.toLowerCase().includes('github')
+      ) {
+        setAddedDefaultLinks({ ...addedDefaultLinks, github: false });
+      }
+      if (
+        !data?.link_name.toLowerCase().includes('instagram') &&
+        prevLink.link_name.toLowerCase().includes('instagram')
+      ) {
+        setAddedDefaultLinks({ ...addedDefaultLinks, instagram: false });
+      }
+      if (
+        !data?.link_name.toLowerCase().includes('linkedin') &&
+        prevLink.link_name.toLowerCase().includes('linkedin')
+      ) {
+        setAddedDefaultLinks({ ...addedDefaultLinks, linkedin: false });
+      }
 
-    setIsLinkEditing(false);
+      if (data.link_name === '') {
+        addedLinks.map((link) => {
+          if (link.link_name === prevLink.link_name) {
+            link.link_name = linkUrlVal.value;
+            link.link_url = data.link_url;
+          }
+        });
+      } else {
+        addedLinks.map((link) => {
+          if (link.link_name === prevLink.link_name) {
+            link.link_name = data.link_name;
+            link.link_url = data.link_url;
+          }
+        });
+      }
+
+      setIsLinkEditing(false);
+    }
   };
 
   const linkName = (fullLink) => {
