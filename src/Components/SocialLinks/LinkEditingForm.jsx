@@ -132,7 +132,7 @@ const LinkEditingForm = ({
             URL
           </label>
           <input
-            className="py-2 px-4 focus:outline-none border-b-[1px] border-black text-sm placeholder:text-base placeholder:text-gray-400"
+            className="py-2 px-4 focus:outline-none border-b-[1px] border-black text-base placeholder:text-base placeholder:text-gray-400"
             placeholder="Link url"
             type="text"
             defaultValue={prevLink.link_url}
@@ -150,7 +150,7 @@ const LinkEditingForm = ({
             })}
           />
         </div>
-        <label className="text-[13px] flex text-left absolute top-[106px]">
+        <label className="text-[13px] flex text-left absolute top-[104px] left-4">
           {errors.link_url?.type === 'required' && (
             <span className="label-text-alt text-red-500">
               {errors.link_url.message}
@@ -199,7 +199,7 @@ const LinkEditingForm = ({
             })()}
 
             <input
-              className="py-2 px-2 focus:outline-none text-sm placeholder:text-base placeholder:text-gray-400"
+              className="py-2 px-1 focus:outline-none text-base placeholder:text-base placeholder:text-gray-400"
               type="text"
               placeholder="Link Name"
               defaultValue={prevLink.link_name}
@@ -212,7 +212,7 @@ const LinkEditingForm = ({
               })}
             />
           </div>
-          <label className="text-[13px] flex text-left absolute top-[67px]">
+          <label className="text-[13px] flex text-left absolute top-[65px] left-4">
             {errors.link_name?.type === 'validate' && (
               <span className="label-text-alt text-red-500">
                 {errors.link_name.message}
