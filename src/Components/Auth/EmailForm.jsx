@@ -28,13 +28,13 @@ const EmailForm = ({ setEnteredEmail, btnTitle }) => {
           Email
         </label>
         <input
-          className="py-[7px] px-4 focus:outline-none border-b-[1px] border-black text-sm placeholder:text-gray-400 placeholder:text-sm"
+          className="py-[9px] px-4 focus:outline-none border-b-[1px] border-black text-base placeholder:text-gray-400 placeholder:text-base"
           placeholder="Enter Your Email"
           type="text"
           {...register('email', {
             required: {
               value: true,
-              message: 'Email is required.',
+              message: 'Please enter a valid email address.',
             },
             pattern: {
               value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
@@ -43,7 +43,7 @@ const EmailForm = ({ setEnteredEmail, btnTitle }) => {
           })}
         />
       </div>
-      <label className="text-[13px] flex text-left absolute top-[66px] left-5">
+      <label className="text-[13px] flex text-left absolute top-[64px] left-5">
         {errors.email?.type === 'required' && (
           <span className="label-text-alt text-red-500">
             {errors.email.message}

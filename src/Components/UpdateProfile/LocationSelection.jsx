@@ -54,7 +54,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
     option: (provided, state) => ({
       ...provided,
       color: '#000',
-      fontSize: 14,
+      fontSize: 16,
       background: state.isFocused || state.isSelected ? '#f6f6f6' : 'white',
       '&:hover': {
         background: '#f6f6f6',
@@ -84,7 +84,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
     placeholder: (base) => ({
       ...base,
       color: '#9ca3af',
-      fontSize: 14,
+      fontSize: 16,
     }),
     menu: (base) => ({
       ...base,
@@ -93,7 +93,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
     }),
     singleValue: (base) => ({
       ...base,
-      fontSize: 14,
+      fontSize: 16,
     }),
   };
 
@@ -106,7 +106,7 @@ const LocationSelection = ({ setSelectedLocation }) => {
       components={{ ValueContainer }}
       options={locationArray}
       styles={styles}
-      className="placeholder:text-gray-400 placeholder:text-sm"
+      className="placeholder:text-gray-400 placeholder:text-base"
     />
   );
 };

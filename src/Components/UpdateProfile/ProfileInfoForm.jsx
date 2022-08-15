@@ -37,9 +37,9 @@ const ProfileInfoForm = ({
         {/* user Image  */}
         <ProfileImage setProfileImg={setProfileImg} editedImg={editedImg} />
 
-        <div className="md:flex items-center md:gap-x-[16px] mb-[30px]">
+        <div className="md:flex items-center md:gap-x-[16px] mb-[28px]">
           {/* first name */}
-          <div className="relative w-full mb-[30px] md:mb-0">
+          <div className="relative w-full mb-[28px] md:mb-0">
             <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-[12px] mt-1 px-4"
@@ -48,7 +48,7 @@ const ProfileInfoForm = ({
                 First Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm text-sm"
+                className="py-[7.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-base text-base"
                 placeholder="Enter Your First Name"
                 type="text"
                 {...register('first_name', {
@@ -59,7 +59,7 @@ const ProfileInfoForm = ({
                 })}
               />
             </div>
-            <label className="text-[13px] font-medium left-5 flex text-left absolute top-[58px]">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute top-[64px]">
               {errors.first_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.first_name.message}
@@ -78,7 +78,7 @@ const ProfileInfoForm = ({
                 Last Name
               </label>
               <input
-                className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm text-sm"
+                className="py-[7.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-base text-base"
                 placeholder="Enter Your Last Name"
                 type="text"
                 {...register('last_name', {
@@ -89,7 +89,7 @@ const ProfileInfoForm = ({
                 })}
               />
             </div>
-            <label className="text-[13px] font-medium left-5 flex text-left absolute top-[58px]">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute top-[64px]">
               {errors.last_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.last_name.message}
@@ -100,7 +100,7 @@ const ProfileInfoForm = ({
         </div>
 
         {/* location  */}
-        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[30px]">
+        <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full mx-auto flex flex-col text-left border-b-black mb-[28px]">
           <label
             className="text-gray-500 text-[12px] mt-1 px-4"
             htmlFor="location"
@@ -127,7 +127,7 @@ const ProfileInfoForm = ({
               Professional One-Liner
             </label>
             <input
-              className="py-[6.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-sm text-sm"
+              className="py-[7.5px] px-4 focus:outline-none bg-white placeholder:text-gray-400 placeholder:text-base text-base"
               type="text"
               autoComplete="off"
               placeholder="What do you do?"
@@ -139,7 +139,7 @@ const ProfileInfoForm = ({
               })}
             />
           </div>
-          <label className="text-[13px] font-medium left-5 flex text-left absolute top-[58px]">
+          <label className="text-[13px] font-medium left-5 flex text-left absolute top-[64px]">
             {errors.profession?.type === 'required' && (
               <span className="label-text-alt text-red-500">
                 {errors.profession.message}
