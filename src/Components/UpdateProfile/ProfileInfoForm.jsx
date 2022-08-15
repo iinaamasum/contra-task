@@ -59,7 +59,7 @@ const ProfileInfoForm = ({
                 })}
               />
             </div>
-            <label className="text-[13px] font-medium left-5 flex text-left absolute top-16">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute top-[58px]">
               {errors.first_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.first_name.message}
@@ -89,7 +89,7 @@ const ProfileInfoForm = ({
                 })}
               />
             </div>
-            <label className="text-[13px] font-medium left-5 flex text-left absolute top-16">
+            <label className="text-[13px] font-medium left-5 flex text-left absolute top-[58px]">
               {errors.last_name?.type === 'required' && (
                 <span className="label-text-alt text-red-500">
                   {errors.last_name.message}
@@ -139,7 +139,7 @@ const ProfileInfoForm = ({
               })}
             />
           </div>
-          <label className="text-[13px] font-medium left-5 flex text-left absolute top-[66px]">
+          <label className="text-[13px] font-medium left-5 flex text-left absolute top-[58px]">
             {errors.profession?.type === 'required' && (
               <span className="label-text-alt text-red-500">
                 {errors.profession.message}
