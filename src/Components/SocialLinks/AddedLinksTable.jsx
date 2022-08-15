@@ -43,6 +43,8 @@ const AddedLinksTable = ({
       addedLinks={addedLinks}
       setAddedLinks={setAddedLinks}
       setIsLinkEditing={setIsLinkEditing}
+      addedDefaultLinks={addedDefaultLinks}
+      setAddedDefaultLinks={setAddedDefaultLinks}
     />
   ) : (
     <div className="flex flex-col max-w-[425px] mx-auto text-center">

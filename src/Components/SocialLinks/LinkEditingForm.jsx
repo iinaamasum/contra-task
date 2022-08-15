@@ -11,7 +11,13 @@ import {
 } from 'react-icons/fa';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 
-const LinkEditingForm = ({ addedLinks, prevLink, setIsLinkEditing }) => {
+const LinkEditingForm = ({
+  addedLinks,
+  prevLink,
+  setIsLinkEditing,
+  addedDefaultLinks,
+  setAddedDefaultLinks,
+}) => {
   const [linkUrlVal, setLinkUrlVal] = useState({
     value: '',
   });
@@ -29,6 +35,25 @@ const LinkEditingForm = ({ addedLinks, prevLink, setIsLinkEditing }) => {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
+
+    if (
+      !data?.link_name.toLowerCase().includes('github') &&
+      prevLink.link_name.toLowerCase().includes('github')
+    ) {
+      setAddedDefaultLinks({ ...addedDefaultLinks, github: false });
+    }
+    if (
+      !data?.link_name.toLowerCase().includes('instagram') &&
+      prevLink.link_name.toLowerCase().includes('instagram')
+    ) {
+      setAddedDefaultLinks({ ...addedDefaultLinks, instagram: false });
+    }
+    if (
+      !data?.link_name.toLowerCase().includes('linkedin') &&
+      prevLink.link_name.toLowerCase().includes('linkedin')
+    ) {
+      setAddedDefaultLinks({ ...addedDefaultLinks, linkedin: false });
+    }
 
     if (data.link_name === '') {
       addedLinks.map((link) => {
