@@ -110,7 +110,7 @@ const LinkInputForm = ({
             URL
           </label>
           <input
-            className="py-2 px-4 focus:outline-none border-b-[1px] border-black"
+            className="py-2 px-4 focus:outline-none border-b-[1px] border-black text-base placeholder:text-base placeholder:text-gray-400"
             placeholder="Link url"
             type="text"
             {...register('link_url', {
@@ -127,7 +127,7 @@ const LinkInputForm = ({
             })}
           />
         </div>
-        <label className="text-[13px] flex text-left absolute top-[106px]">
+        <label className="text-[13px] flex text-left absolute top-[104px] left-4">
           {errors.link_url?.type === 'required' && (
             <span className="label-text-alt text-red-500">
               {errors.link_url.message}
@@ -176,7 +176,7 @@ const LinkInputForm = ({
             })()}
 
             <input
-              className="py-2 px-2 focus:outline-none w-[80%]"
+              className="py-2 px-1 focus:outline-none w-[80%] text-base placeholder:text-base placeholder:text-gray-400"
               type="text"
               placeholder="Link Name"
               defaultValue={linkFixedInputName?.name || linkUrlVal.value}
@@ -189,7 +189,7 @@ const LinkInputForm = ({
               })}
             />
           </div>
-          <label className="text-[13px] flex text-left absolute top-[67px]">
+          <label className="text-[13px] flex text-left absolute top-[65px] left-4">
             {errors.link_name?.type === 'validate' && (
               <span className="label-text-alt text-red-500">
                 {errors.link_name.message}
