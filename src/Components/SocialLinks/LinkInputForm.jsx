@@ -176,7 +176,7 @@ const LinkInputForm = ({
             })()}
 
             <input
-              className="py-2 px-2 focus:outline-none"
+              className="py-2 px-2 focus:outline-none w-[80%]"
               type="text"
               placeholder="Link Name"
               defaultValue={linkFixedInputName?.name || linkUrlVal.value}
