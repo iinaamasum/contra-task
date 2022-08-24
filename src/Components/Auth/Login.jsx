@@ -21,7 +21,7 @@ const Login = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-2xl px-[32px] py-[24px] md:px-[160px] md:pt-[66px] md:pb-[80px] w-full mdLg800:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-2xl px-[32px] py-[24px] md:px-auto md:pt-[66px] md:pb-[80px] mdLg800:px-[160px] w-full md:w-[640px] mdLg800:w-[800px] mx-auto text-center"
           >
             {/* heading  */}
             <h4 className="text-[1.4375rem] md:text-[2.215rem] font-[700] mb-[19px] tracking-tight">
@@ -42,7 +42,7 @@ const Login = () => {
             <div className="sm:w-[156px] mx-auto">
               <button
                 onClick={() => navigate('/sign-up')}
-                className="bg-black text-white rounded-full px-[25px] py-[12px] sm:px-[46px] sm:py-[18px] mt-[16px] lg:mt-0 hover:bg-gray-800"
+                className="bg-black text-white rounded-full px-[25px] py-[12px] sm:px-[46px] mt-[16px] lg:mt-0 hover:bg-gray-800"
               >
                 Sign Up
               </button>
