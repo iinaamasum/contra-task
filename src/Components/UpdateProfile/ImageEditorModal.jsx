@@ -54,7 +54,7 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fefefe] rounded-t-3xl px-[32px] py-[24px] md:px-[48px] md:py-[32px] w-full mdLg800:w-[800px] mx-auto text-center"
+            className="bg-[#fefefe] rounded-t-3xl px-[32px] py-[24px] md:px-[48px] md:py-[32px] w-full md:w-[640px] mdLg800:w-[800px] mx-auto text-center"
           >
             <div className="rounded-t-3xl">
               <div className="">
@@ -97,7 +97,7 @@ const ImageEditorModal = ({ setEditedImg, setProfileImg, profileImg }) => {
           </div>
 
           {/* form submit btn  */}
-          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[800px] mx-auto text-center text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10 flex items-center justify-center gap-x-4">
+          <div className="bg-[#fff] mt-[2.5px] py-[20px] w-full md:w-[640px] mdLg800:w-[800px] mx-auto text-center text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-10 flex items-center justify-center gap-x-4">
             <button
               onClick={handleCancel}
               className="rounded-full h-12 w-[148px] bg-[#f6f6f6] hover:bg-[#f2f2f2] text-black font-semibold text-md md:text-lg shadow-sm"
