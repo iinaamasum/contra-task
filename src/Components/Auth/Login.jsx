@@ -42,7 +42,7 @@ const Login = () => {
             <div className="sm:w-[156px] mx-auto">
               <button
                 onClick={() => navigate('/sign-up')}
-                className="bg-black text-white rounded-full px-[25px] py-[12px] sm:px-[46px] mt-[16px] lg:mt-0 hover:bg-gray-800"
+                className="bg-black text-white rounded-full px-[25px] py-[12px] sm:px-[46px] mt-[16px] lg:mt-0 hover:bg-gray-800 font-medium"
               >
                 Sign Up
               </button>

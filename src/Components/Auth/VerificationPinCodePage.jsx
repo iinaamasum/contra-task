@@ -65,7 +65,7 @@ const VerificationPinCodePage = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fefefe] rounded-3xl px-[32px] py-[24px] md:px-[160px] md:py-[72px] w-full mdLg800:w-[800px] mx-auto text-center"
+            className="bg-[#fefefe] rounded-3xl px-[32px] py-[30px] mdLg800:px-[160px] md:py-[72px] w-full md:px-auto  md:w-[640px] mdLg800:w-[800px] mx-auto text-center"
           >
             {/* heading  */}
             <div className="w-full flex items-center flex-col">
