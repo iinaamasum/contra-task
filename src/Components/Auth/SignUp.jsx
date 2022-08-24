@@ -24,7 +24,7 @@ const SignUp = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-t-2xl px-[32px] py-[24px] md:px-[160px] md:pt-[66px] md:pb-[80px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-t-2xl px-[32px] py-[24px] md:px-auto md:pt-[66px] md:pb-[80px] mdLg800:px-[160px] w-full md:w-[640px] mdLg800:w-[800px] mx-auto text-center"
           >
             <div className="rounded-t-3xl">
               <div className="">
@@ -44,7 +44,7 @@ const SignUp = () => {
               <EmailForm setEnteredEmail={setEnteredEmail} btnTitle="Sign Up" />
             </div>
           </div>
-          <div className="bg-[#fefefe] mt-[2.5px] py-[25px] w-full md:w-[800px] mx-auto text-center text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-5">
+          <div className="bg-[#fefefe] mt-[2.5px] py-[25px] w-full md:w-[640px] mdLg800:w-[800px] mx-auto text-center text-gray-500 rounded-b-3xl leading-5 text-[15px] mb-5">
             <p>
               By continuing, you agree to{' '}
               <Link to="/" className="underline">

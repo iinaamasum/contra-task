@@ -21,7 +21,7 @@ const Login = () => {
             style={{
               boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
             }}
-            className="bg-[#fafafa] rounded-2xl px-[32px] py-[24px] md:px-[160px] md:pt-[66px] md:pb-[80px] w-full md:w-[800px] mx-auto text-center"
+            className="bg-[#fafafa] rounded-2xl px-[32px] py-[24px] md:px-[160px] md:pt-[66px] md:pb-[80px] w-full mdLg800:w-[800px] mx-auto text-center"
           >
             {/* heading  */}
             <h4 className="text-[1.4375rem] md:text-[2.215rem] font-[700] mb-[19px] tracking-tight">

@@ -28,7 +28,7 @@ const UpdateProfilePage = () => {
               style={{
                 boxShadow: 'rgb(228 232 247 / 80%) 0px 0px 24px',
               }}
-              className="bg-[#fefefe] rounded-b-2xl md:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full md:w-[800px] mx-auto text-center mb-32 md:mb-0"
+              className="bg-[#fefefe] rounded-b-2xl md:rounded-b-none rounded-t-2xl px-[32px] py-[24px] md:px-[48px] md:py-[42px] w-full mdLg800:w-[800px] mx-auto text-center mb-32 md:mb-0"
             >
               <div className="rounded-t-3xl">
                 <div className="">
