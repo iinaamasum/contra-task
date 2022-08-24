@@ -40,7 +40,7 @@ const ProfileInfoForm = ({
         <div className="md:flex items-center md:gap-x-[16px] mb-[28px]">
           {/* first name */}
           <div className="relative w-full mb-[28px] md:mb-0">
-            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
+            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full  md:w-[280px] mdLg800:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-[12px] mt-1 px-4"
                 htmlFor="First-name"
@@ -70,7 +70,7 @@ const ProfileInfoForm = ({
 
           {/* last name */}
           <div className="relative w-full">
-            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[342px] mx-auto flex flex-col text-left border-b-black">
+            <div className="border-[1.5px] bg-[#fff] rounded-t-lg w-full md:w-[280px] mdLg800:w-[342px] mx-auto flex flex-col text-left border-b-black">
               <label
                 className="text-gray-500 text-[12px] mt-1 px-4"
                 htmlFor="Last-name"
